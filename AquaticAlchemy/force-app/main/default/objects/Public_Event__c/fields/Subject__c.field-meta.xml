@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Subject__c</fullName>
     <externalId>false</externalId>
-    <label>Subject</label>
+    <label>Event Type</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
@@ -12,6 +12,16 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>Aquatic Class</fullName>
+                <default>false</default>
+                <label>Aquatic Class</label>
+            </value>
+            <value>
+                <fullName>Swim Meet</fullName>
+                <default>false</default>
+                <label>Swim Meet</label>
+            </value>
+            <value>
                 <fullName>Birthday Party</fullName>
                 <default>false</default>
                 <label>Birthday Party</label>
@@ -20,16 +30,6 @@
                 <fullName>Private Event</fullName>
                 <default>false</default>
                 <label>Private Event</label>
-            </value>
-            <value>
-                <fullName>Swim Meet</fullName>
-                <default>false</default>
-                <label>Swim Meet</label>
-            </value>
-            <value>
-                <fullName>Aquatic Class</fullName>
-                <default>false</default>
-                <label>Aquatic Class</label>
             </value>
         </valueSetDefinition>
     </valueSet>
