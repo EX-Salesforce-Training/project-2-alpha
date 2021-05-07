@@ -44,6 +44,7 @@ Aquatic Alchemy is a 100% organic, vegan friendly, fresh water facility where on
 * League Screen
 * Account Information screen
 * Job Application screen
+* Class Listing Screen
 
 
 ### 4. Wireframes
