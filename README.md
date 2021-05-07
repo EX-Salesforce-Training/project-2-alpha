@@ -8,7 +8,7 @@
 
 ## Overview
 ### Description
-Aquatic Alchemy is a 100% organic, vegan friendly, fresh water facility where one can improve their water manipulation skills through our alchemical lessons and services. This project has been taken over by Team Alpha Synergy from Team First Order Alchemy to migrate outdated Visualforce pages into new Lightning Aura components with additional features.
+Aquatic Alchemy is a 100% organic, vegan friendly, fresh water facility where one can improve their water manipulation skills through our alchemical lessons and services. This project has been taken over by Team Alpha Synergy from Team First Order Alchemy to migrate outdated Visualforce pages into new Lightning Aura components, with some new additional features!
 
 
 ## Product Spec
@@ -44,12 +44,13 @@ Aquatic Alchemy is a 100% organic, vegan friendly, fresh water facility where on
 * League Screen
 * Account Information screen
 * Job Application screen
-* Class Listing Screen
 
 
 ### 4. Wireframes
 | Screen | Wireframes |
 | --- | --- |
-| Class Listings | <img src="https://cdn.discordapp.com/attachments/672224549978243102/840304716289671188/unknown.png" width=400> |
+| Class Listings | <img src="https://cdn.discordapp.com/attachments/672224549978243102/840329101872332829/unknown.png" width=400> |
 | Job Applications & Application Page | <img src="https://cdn.discordapp.com/attachments/672224549978243102/840304085331869747/unknown.png" width=400><img src="https://cdn.discordapp.com/attachments/672224549978243102/840303881954263080/unknown.png" width=400>|
+| Account Page | <img src="https://cdn.discordapp.com/attachments/672224549978243102/840328196339531807/unknown.png" width=400> |
+| Swim League Page | <img src="https://cdn.discordapp.com/attachments/672224549978243102/840327879869857802/unknown.png" width=400> |
 
