@@ -6,6 +6,6 @@
 */
 public with sharing class ClassDetailController {
     public ClassDetailController() {
-
+        
     }
 }
