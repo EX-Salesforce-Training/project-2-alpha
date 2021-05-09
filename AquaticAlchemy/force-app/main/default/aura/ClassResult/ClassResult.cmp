@@ -1,3 +1,6 @@
-<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
-	
+<aura:component controller="ClassResultController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:attribute name="classListing" type="Class__c[]"></aura:attribute>
+    <aura:attribute name="classesAvailable" type="boolean" default="false"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.GetAllClasses}"></aura:handler>
+    
 </aura:component>

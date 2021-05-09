@@ -1,5 +1,5 @@
 ({
-	myAction : function(component, event, helper) {
-		
+	GetAllClasses : function(component, event, helper) {
+		helper.GetAllClassesHelper(component, event, helper);
 	}
 })
