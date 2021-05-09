@@ -1,5 +1,5 @@
 ({
-	GetAllClasses : function(component, event, helper) {
-		helper.GetAllClassesHelper(component, event, helper);
+	RetreiveAllClasses : function(component, event, helper) {
+		helper.RetreiveAllClassesHelper(component, event, helper);
 	}
 })

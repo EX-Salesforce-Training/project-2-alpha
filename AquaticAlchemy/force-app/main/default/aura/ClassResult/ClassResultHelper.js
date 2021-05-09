@@ -1,5 +1,5 @@
 ({
-	GetAllClasses : function()  {
+	RetreiveAllClassesHelper : function(component, event, helper)  {
 		var action = component.get('c.GetAllClasses');
 		action.setCallback(this, function(response) {
 			var responseData = response.getReturnValue();
