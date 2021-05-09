@@ -3,7 +3,21 @@
     <aura:attribute name="classesAvailable" type="boolean" default="false"></aura:attribute>
     <aura:handler name="init" value="{!this}" action="{!c.RetreiveAllClasses}"></aura:handler>
     <aura:if isTrue="{!v.classesAvailable}">
-        <span>Class Listing</span>
+        <lightning:layout multipleRows="true"> 
+            <aura:iteration items="{!v.classListing}" var="prop">
+                <lightning:layoutItem padding="around-small" size="6">
+                    <lightning:layout multipleRows="true">
+                        <div class="slds-box"  style="width:100%;background-color:white;">
+                            <lightning:layout>
+                                <lightning:layoutItem size="4" padding="around-small">
+                                    <img src="{!$Resource.Swim}"/>
+                                </lightning:layoutItem>
+                            </lightning:layout>
+                        </div>
+                    </lightning:layout>
+                </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layout>>
     <aura:set attribute="else">
         <span>Class Listing aren't visible yet. </span>
     </aura:set>
