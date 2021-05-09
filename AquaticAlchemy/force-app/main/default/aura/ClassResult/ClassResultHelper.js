@@ -1,3 +1,9 @@
+/*    Name: ClassResultHelper  
+     Author: Andreology
+     Created: 05/08/2021
+     Updated: 05/08/2021
+     Description: client-side Controller  helper class for ClassResultController Lightning Component which will be on Class Listing Page. 
+*/
 ({
 	RetreiveAllClassesHelper : function(component, event, helper)  {
 		var action = component.get('c.GetAllClasses');

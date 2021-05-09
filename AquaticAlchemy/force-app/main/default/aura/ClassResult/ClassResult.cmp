@@ -1,3 +1,10 @@
+  
+<!-- Name: ClassResult Page
+     Author: Andreology
+     Created: 05/07/2021
+     Updated: 05/08/2021
+     Description: This Page will show a list of classes available currently
+-->
 <aura:component controller="ClassResultController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
 	<aura:attribute name="classListing" type="Class__c[]"></aura:attribute>
     <aura:attribute name="classesAvailable" type="boolean" default="false"></aura:attribute>
