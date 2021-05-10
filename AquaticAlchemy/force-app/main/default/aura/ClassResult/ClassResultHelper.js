@@ -8,7 +8,7 @@
 	RetreiveAllClassesHelper : function(component)  {
 		var action = component.get('c.GetAllClasses');
 		action.setCallback(this, function(response) {
-			if(response.getState == "SUCCESS") {
+			if(response.getState() == "SUCCESS") {
 				var responseData = response.getReturnValue();
 				component.set('v.classListing', responseData); 
 				component.set('v.classesAvailable', true); 
