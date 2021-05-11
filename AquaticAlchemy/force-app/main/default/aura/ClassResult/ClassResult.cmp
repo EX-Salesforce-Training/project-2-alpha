@@ -28,6 +28,16 @@
                                             <p>Capacity: {!prop.Capacity__c}</p>
                                         </lightning:layoutItem>
                                     </lightning:card>
+                                    <div class="slds-p-top_small"> 
+                                        <lightning:buttonGroup>
+                                            <lightning:button class="button_style" variant="brand-outline" label="Class Details" 
+                                                             value="{!prop.Class_Instructor__c}" onClick="{c.handleInstructorDetails}"></lightning:button>
+                                            <lightning:button class="button_style" variant="brand-outline" label="Register" 
+                                                             value="{!prop.Class_Instructor__c}" onClick="{c.handleInstructorDetails}"></lightning:button>
+                                            <lightning:button class="button_style" variant="brand-outline" label="Instructor Details" 
+                                                             value="{!prop.Class_Instructor__c}" onClick="{c.handleInstructorDetails}"></lightning:button>
+                                        </lightning:buttonGroup>
+                                    </div>
                                 </lightning:layoutItem>
                             </lightning:layout>
                             

@@ -7,5 +7,8 @@
 ({
 	RetreiveAllClasses : function(component, event, helper) {
 		helper.RetreiveAllClassesHelper(component);
-	}
+	},
+     handleInstructorDetails : function(component, event, helper) {
+          //
+     }
 })
