@@ -19,7 +19,13 @@
                                 <lightning:layoutItem size="4" padding="around-small">
                                     <img src="{!$Resource.Swim}"/>
                                 </lightning:layoutItem>
+                                <lightning:layoutItem size="8" padding="around-small">
+                                    <lightning:card title="{!prop.Name}">
+
+                                    </lightning:card>
+                                </lightning:layoutItem>
                             </lightning:layout>
+                            
                         </div>
                     </lightning:layout>
                 </lightning:layoutItem>
