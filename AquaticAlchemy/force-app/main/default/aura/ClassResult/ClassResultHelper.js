@@ -11,6 +11,7 @@
 			if(response.getState() == "SUCCESS") {
 				var responseData = response.getReturnValue();
 				component.set('v.classListing', responseData); 
+				console.log("in retrieve ", responseData);
 				component.set('v.classesAvailable', true); 
 			}
 			

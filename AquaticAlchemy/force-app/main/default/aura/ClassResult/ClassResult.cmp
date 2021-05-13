@@ -10,7 +10,7 @@
     <aura:attribute name="classListing" type="Class__c[]"></aura:attribute>
     <aura:attribute name="classesAvailable" type="boolean" default="false"></aura:attribute>
     <aura:attribute name="instructorDetailsClicked" type="boolean" default="false"></aura:attribute>
-
+    <aura:attribute name="instructorId" type="string"></aura:attribute>
     <aura:handler name="init" value="{!this}" action="{!c.RetreiveAllClasses}"></aura:handler>
 
     <aura:if isTrue="{!v.classesAvailable}">
@@ -66,6 +66,9 @@
                         onclick="{!c.handleCloseInstructorDetails}"></lightning:buttonIcon>
                     </lightning:card>
                 </header>
+                <div class="slds-modal__content slds-p-around_medium" >
+                    <c:ClassInstructor instructorId="{!v.instructorId}"></c:ClassInstructor>
+                </div>
             </div>
         </section>
     </div>

@@ -9,6 +9,10 @@
 		helper.RetreiveAllClassesHelper(component);
 	},
      handleInstructorDetails : function(component, event, helper) {
+          let src_event = event.getSource();
+          let instr_id = src_event.get('v.value');
+          console.log("checking", instr_id)
+          component.set('v.instructorId', instr_id);
           component.set('v.instructorDetailsClicked', "true");
      },
      handleCloseInstructorDetails : function(component, event, helper) {
