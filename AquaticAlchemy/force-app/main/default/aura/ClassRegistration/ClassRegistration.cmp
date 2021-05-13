@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="registeredSuccesfully" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="classId" type="string"></aura:attribute>
+    
+    <lightning:card title="Register Today" >
+        <aura:if isTrue="{!v.registeredSuccesfully}">
+            <span sytle="color:blue;">Registered Succusfully! We Will contact you soon.</span>
+            <aura:set attribute="else">
+                <div class="slds-p-around_small">
+                    <lightning:recordEditForm objectApiName="Class_Registration__c" onsuccess="{!c.handleRegistration}">
+                        <lightning:inputField fieldName="Class__c" value="{!v.classId}" variant="label-stacked" disabled="true"></lightning:inputField>
+                        <lightning:inputField fieldName="Full_Name__c" variant="label-stacked" disabled="true"></lightning:inputField>
+                        <lightning:inputField fieldName="Email__c" variant="label-stacked" disabled="true"></lightning:inputField>
+                        <lightning:button type="submit" name="register" label="Register" variant="brand" 
+                                          class="slds-m-top_small"></lightning:button>
+                    </lightning:recordEditForm>
+                </div>
+            </aura:set>
+        </aura:if>
+    </lightning:card>
+</aura:component>	
