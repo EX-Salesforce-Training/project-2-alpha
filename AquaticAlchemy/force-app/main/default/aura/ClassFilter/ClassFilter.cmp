@@ -8,7 +8,8 @@
             <div class="header-column" >
                 <lightning:combobox label="Level" placeholder="Select Level" 
                                     fieldLevelHelp="Find Level of Difficulty"
-                                    variant="label-stacked" value="{!v.classLevels}">
+                                    variant="label-stacked" value="{!v.level}"
+                                    options="{!v.classLevels}">
                 </lightning:combobox>
             </div>
         </lightning:layoutItem>
