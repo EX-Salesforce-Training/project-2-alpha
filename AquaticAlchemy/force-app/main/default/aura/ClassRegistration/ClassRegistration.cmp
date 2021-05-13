@@ -9,8 +9,8 @@
                 <div class="slds-p-around_small">
                     <lightning:recordEditForm objectApiName="Class_Registration__c" onsuccess="{!c.handleRegistration}">
                         <lightning:inputField fieldName="Class__c" value="{!v.classId}" variant="label-stacked" disabled="true"></lightning:inputField>
-                        <lightning:inputField fieldName="Full_Name__c" variant="label-stacked" disabled="true"></lightning:inputField>
-                        <lightning:inputField fieldName="Email__c" variant="label-stacked" disabled="true"></lightning:inputField>
+                        <lightning:inputField fieldName="Full_Name__c" variant="label-stacked" ></lightning:inputField>
+                        <lightning:inputField fieldName="Email__c" variant="label-stacked" ></lightning:inputField>
                         <lightning:button type="submit" name="register" label="Register" variant="brand" 
                                           class="slds-m-top_small"></lightning:button>
                     </lightning:recordEditForm>

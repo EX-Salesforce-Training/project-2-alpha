@@ -11,6 +11,8 @@
     <aura:attribute name="classesAvailable" type="boolean" default="false"></aura:attribute>
     <aura:attribute name="instructorDetailsClicked" type="boolean" default="false"></aura:attribute>
     <aura:attribute name="instructorId" type="string"></aura:attribute>
+    <aura:attribute name="registrationBttnClicked" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="classId" type="string"></aura:attribute>
     <aura:handler name="init" value="{!this}" action="{!c.RetreiveAllClasses}"></aura:handler>
 
     <aura:if isTrue="{!v.classesAvailable}">
@@ -35,9 +37,9 @@
                                     <div class="slds-p-top_small"> 
                                         <lightning:buttonGroup>
                                             <lightning:button class="button_style" variant="brand-outline" label="Class Details" 
-                                                             value="{!prop.Class_Instructor__c}" onClick=""></lightning:button>
+                                                             value="{!prop.Id}" onClick=""></lightning:button>
                                             <lightning:button class="button_style" variant="brand-outline" label="Register" 
-                                                             value="{!prop.Class_Instructor__c}" onClick=""></lightning:button>
+                                                             value="{!prop.Id}" onclick="{!c.handleRegistrationPopUp}"></lightning:button>
                                             <lightning:button class="button_style" variant="brand-outline" label="Instructor Details" 
                                                              value="{!prop.Class_Instructor__c}" onclick="{!c.handleInstructorDetails}"></lightning:button>
                                         </lightning:buttonGroup>
@@ -55,7 +57,7 @@
     </aura:set>
     </aura:if>
 
-<!-- Instructor Details Modal Code Block Start -->
+<!-- Beginning Instructor Details Modal Code Block  -->
 <aura:if isTrue="{!v.instructorDetailsClicked}"> 
     <div style="margin-top:5%">
         <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" >
@@ -73,8 +75,24 @@
         </section>
     </div>
 </aura:if>
-
-
+<!-- Ending Instructor Details Modal Code Block  -->
+<!-- Beginning Registration Modal Code Block  -->
+<aura:if isTrue="{!v.registrationBttnClicked}" >
+    <div style="margin-top:5%;">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:button class="slds-modal__close" iconName="utility:close"
+                                      onclick="{!c.handleCloseRegistrationPopUp}"></lightning:button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <c:ClassRegistration classId="{!v.classId}"></c:ClassRegistration>
+                </div>
+            </div>
+        </section>
+    </div>
+</aura:if>
+<!-- Ending Registration Modal Code Block  -->
 </aura:component>
 
 

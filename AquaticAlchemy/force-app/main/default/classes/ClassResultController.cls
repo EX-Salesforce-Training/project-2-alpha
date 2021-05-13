@@ -11,7 +11,7 @@ public with sharing class ClassResultController {
     @AuraEnabled(cacheable=true) 
     public static List<Class__c> GetAllClasses() {
         List<Class__c> allClassAvailable = new List<Class__c>();
-        allClassAvailable = [SELECT Name, Capacity__c, Class_Price__c, Class_Time__c, Class_Type__c, Day__c, Class_Instructor__C,
+        allClassAvailable = [SELECT Id, Name, Capacity__c, Class_Price__c, Class_Time__c, Class_Type__c, Day__c, Class_Instructor__C,
                                     InstructorEmail__C, InstructorName__C, InstructorPhone__C, Level__c, Start_Date__c
                                 FROM Class__c LIMIT 20
                             ];
