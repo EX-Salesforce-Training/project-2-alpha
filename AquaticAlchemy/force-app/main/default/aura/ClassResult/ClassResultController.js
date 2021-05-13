@@ -9,6 +9,9 @@
 		helper.RetreiveAllClassesHelper(component);
 	},
      handleInstructorDetails : function(component, event, helper) {
-          //
+          component.set('v.instructorDetailsClicked', "true");
+     },
+     handleCloseInstructorDetails : function(component, event, helper) {
+          component.set('v.instructorDetailsClicked', "false");
      }
 })

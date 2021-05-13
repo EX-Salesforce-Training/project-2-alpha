@@ -3,8 +3,16 @@
     <lightning:recordViewForm recordId="{!v.Id}" objectApiName="Class_Instructor__c">
         <lightning:layout>
             <div class="slds-box slds-grid slds-wrap slds-p-around_small">
-                <div class="slds-col">
-                    <lightning:outputField fieldName=""></lightning:outputField>
+                <div class="slds-col" style="margin-top:2%; width:10%;">
+                    <lightning:outputField fieldName="Instructor_Photo__c" variant="label-hidden"></lightning:outputField>
+                </div>
+                <div class="slds-col" style="margin-left:4%;">
+                    <lightning:layoutItem>
+                        <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Name" variant="label-hidden"></lightning:outputField>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem>
+                        <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Instructor_Email__c" variant="label-hidden"></lightning:outputField>
+                    </lightning:layoutItem>
                 </div>
             </div>
         </lightning:layout>

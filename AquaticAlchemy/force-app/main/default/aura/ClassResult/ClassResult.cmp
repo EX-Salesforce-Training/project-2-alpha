@@ -6,9 +6,13 @@
      Description: This Page will show a list of classes available currently
 -->
 <aura:component controller="ClassResultController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
-	<aura:attribute name="classListing" type="Class__c[]"></aura:attribute>
+	<!-- Attributes Instantiated -->
+    <aura:attribute name="classListing" type="Class__c[]"></aura:attribute>
     <aura:attribute name="classesAvailable" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="instructorDetailsClicked" type="boolean" default="false"></aura:attribute>
+
     <aura:handler name="init" value="{!this}" action="{!c.RetreiveAllClasses}"></aura:handler>
+
     <aura:if isTrue="{!v.classesAvailable}">
         <lightning:layout multipleRows="true"> 
             <aura:iteration items="{!v.classListing}" var="prop">
@@ -31,11 +35,11 @@
                                     <div class="slds-p-top_small"> 
                                         <lightning:buttonGroup>
                                             <lightning:button class="button_style" variant="brand-outline" label="Class Details" 
-                                                             value="{!prop.Class_Instructor__c}" onClick="{c.handleInstructorDetails}"></lightning:button>
+                                                             value="{!prop.Class_Instructor__c}" onClick=""></lightning:button>
                                             <lightning:button class="button_style" variant="brand-outline" label="Register" 
-                                                             value="{!prop.Class_Instructor__c}" onClick="{c.handleInstructorDetails}"></lightning:button>
+                                                             value="{!prop.Class_Instructor__c}" onClick=""></lightning:button>
                                             <lightning:button class="button_style" variant="brand-outline" label="Instructor Details" 
-                                                             value="{!prop.Class_Instructor__c}" onClick="{c.handleInstructorDetails}"></lightning:button>
+                                                             value="{!prop.Class_Instructor__c}" onclick="{!c.handleInstructorDetails}"></lightning:button>
                                         </lightning:buttonGroup>
                                     </div>
                                 </lightning:layoutItem>
@@ -50,4 +54,24 @@
         <span>Class Listing aren't visible yet. </span>
     </aura:set>
     </aura:if>
+
+<!-- Instructor Details Modal Code Block Start -->
+<aura:if isTrue="{!v.instructorDetailsClicked}"> 
+    <div style="margin-top:5%">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" >
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:card title="Instructor Details" iconName="standard:contact">
+                        <lightning:buttonIcon class="slds-modal__close" iconName="utility:close" 
+                        onclick="{!c.handleCloseInstructorDetails}"></lightning:buttonIcon>
+                    </lightning:card>
+                </header>
+            </div>
+        </section>
+    </div>
+</aura:if>
+
+
 </aura:component>
+
+
