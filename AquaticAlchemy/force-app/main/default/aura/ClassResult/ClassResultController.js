@@ -18,12 +18,12 @@
           component.set('v.instructorDetailsClicked', "false");
      },
      handleCloseRegistrationPopUp : function(component, event, helper) {
-          let src = event.getSource();
-          let classId = src.get('v.value');
-          component.set('v.classId', classId);
           component.set('v.registrationBttnClicked', "false");
      },
      handleRegistrationPopUp : function(component, event, helper) {
+          let src = event.getSource();
+          let classId = src.get('v.value');
+          component.set('v.classId', classId);
           component.set('v.registrationBttnClicked', "true");
      }
 })
