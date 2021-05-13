@@ -1,6 +1,10 @@
  <aura:component  implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="classId" type="string"></aura:attribute>
+    
     <lightning:tabset variant="scoped">
-        <lightning:tab label="Class Info"></lightning:tab>
+        <lightning:tab label="Class Info">
+
+        </lightning:tab>
         <lightning:tab label="Cost Info"></lightning:tab>
         <lightning:tab label="Instructor Info"></lightning:tab>
     </lightning:tabset>

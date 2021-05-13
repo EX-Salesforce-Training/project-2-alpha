@@ -14,6 +14,8 @@
     <aura:attribute name="registrationBttnClicked" type="boolean" default="false"></aura:attribute>
     <aura:attribute name="classId" type="string"></aura:attribute>
     <aura:handler name="init" value="{!this}" action="{!c.RetreiveAllClasses}"></aura:handler>
+    <lightning:navigation aura:id="navigation"></lightning:navigation>
+    <aura:attribute name="page_reference" type="object"></aura:attribute>
 
     <aura:if isTrue="{!v.classesAvailable}">
         <lightning:layout multipleRows="true"> 
@@ -36,8 +38,8 @@
                                     </lightning:card>
                                     <div class="slds-p-top_small"> 
                                         <lightning:buttonGroup>
-                                            <lightning:button class="button_style" variant="brand-outline" label="Class Details" 
-                                                             value="{!prop.Id}" onClick=""></lightning:button>
+                                            <lightning:button class="button_style" variant="brand-outline" label="Class Overview" 
+                                                             value="{!prop.Id}" onclick="{!c.navigateToAllDetails}"></lightning:button>
                                             <lightning:button class="button_style" variant="brand-outline" label="Register" 
                                                              value="{!prop.Id}" onclick="{!c.handleRegistrationPopUp}"></lightning:button>
                                             <lightning:button class="button_style" variant="brand-outline" label="Instructor Details" 

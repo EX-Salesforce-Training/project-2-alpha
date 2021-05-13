@@ -25,5 +25,21 @@
           let classId = src.get('v.value');
           component.set('v.classId', classId);
           component.set('v.registrationBttnClicked', "true");
+     }, 
+     navigateToAllDetails : function(component, event, helper) {
+          let serv = component.find("navigation_service");
+          let src = event.getSource();
+          let classId = src.get('v.value');
+          let page_reference = {
+               type:"standard__component",
+               attribute: {
+                    componentName: "c__ClassOverview"
+               },
+               state: {
+                    "c__classId": classId
+               }
+          };
+          component.set("v.page_reference", page_reference);
+          serv.navigate(page_reference);
      }
 })
