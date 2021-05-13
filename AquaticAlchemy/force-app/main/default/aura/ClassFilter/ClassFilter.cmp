@@ -1,3 +1,16 @@
 <aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
-    
+    <aura:attribute name="level" type="string"></aura:attribute>
+    <aura:attribute name="classLevels" type="List"></aura:attribute>
+
+    <aura:handler name="init" value="this" action="{!c.handleStartFilter}"></aura:handler>
+    <lightning:layout multipleRows="true" class="filterlayout">
+        <lightning:layoutItem padding="around-small">
+            <div class="header-column" >
+                <lightning:combobox label="Level" placeholder="Select Level" 
+                                    fieldLevelHelp="Find Level of Difficulty"
+                                    variant="label-stacked" value="{!v.classLevels}">
+                </lightning:combobox>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
 </aura:component>	
