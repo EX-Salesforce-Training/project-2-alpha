@@ -14,8 +14,8 @@
     <aura:attribute name="registrationBttnClicked" type="boolean" default="false"></aura:attribute>
     <aura:attribute name="classId" type="string"></aura:attribute>
     <aura:handler name="init" value="{!this}" action="{!c.RetreiveAllClasses}"></aura:handler>
-    <lightning:navigation aura:id="navigation"></lightning:navigation>
-    <aura:attribute name="page_reference" type="object"></aura:attribute>
+    <aura:handler name="registeredFilterEvent" event="c:ClassFilterEvent" action="{!c.handleClassFilterChange}"/>
+    
 
     <!-- Display filter -->
     <c:ClassFilter></c:ClassFilter>

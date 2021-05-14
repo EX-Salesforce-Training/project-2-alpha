@@ -41,5 +41,8 @@
           };
           component.set("v.page_reference", page_reference);
           serv.navigate(page_reference);
+     },
+     handleClassFilterChange : function(component, event, helper) {
+          helper.handleClassFilterChange(component, event, helper);
      }
 })

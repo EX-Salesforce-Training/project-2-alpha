@@ -7,7 +7,7 @@
     <aura:attribute name="classInstructors" type="List"></aura:attribute>
     <aura:attribute name="daySelected" type="string"></aura:attribute>
     <aura:attribute name="classDays" type="List"></aura:attribute>
-    <aura:registerEvent name="ClassFilterEvent" type="c:ClassFilterEvent"></aura:registerEvent>
+    <aura:registerEvent name="registeredFilterEvent" type="c:ClassFilterEvent"/>
 
     <aura:handler name="init" value="this" action="{!c.handleStartFilter}"></aura:handler>
     <lightning:layout multipleRows="true" class="filter_style">

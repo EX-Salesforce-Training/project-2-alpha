@@ -18,4 +18,16 @@ public with sharing class ClassResultController {
         return allClassAvailable;
         
     }
+    /*
+    @AuraEnabled(cacheable=true)
+    public static list<Class__c> GetFilteredClasses(String level, String price, String instructor, String day){
+        //Using Dynamic SOQL 
+        String querySelectClasses = 'SELECT Id, Name, Capacity__c, Class_Image__c, Class_Instructor__c, Class_Price__c,';
+        queryClasses = queryClasses + 'Class_Type__C, Day__c, Class_Time__c, InstructorEmail__c, InstructorName__c,';
+        queryClasses = queryClasses + 'Level__c, Start_Date__c';
+        String queryWhereClause = 'WHERE Class_Instructor__c != NULL';
+        
+                               
+    }
+    */
 }
