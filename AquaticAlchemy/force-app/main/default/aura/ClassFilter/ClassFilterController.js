@@ -27,8 +27,17 @@
                            {label:'Friday', Value:'Friday'},
                            {label:'Saturday', Value:'Saturday'}
                           ];
-        component.set('v.classDays', classDays);
-        
-        
+        component.set('v.classDays', classDays);       
+    },
+    handleFilterOptionSelected : function(component, event, helper) {
+        let filter_event = component.getEvent('ClassFilterEvent');
+        filter_event.setParams({
+            "levelFilter": component.get('v.levelSelected'),
+            "priceFilter":component.get('v.priceSelected'),
+            "instructorFilter":component.get('v.instructorSelected'),
+            "dayFilter":component.get('v.daySelected')
+
+        });
+        filter_event.fire();
     }
 })

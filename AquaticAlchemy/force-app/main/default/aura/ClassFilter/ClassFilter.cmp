@@ -7,6 +7,7 @@
     <aura:attribute name="classInstructors" type="List"></aura:attribute>
     <aura:attribute name="daySelected" type="string"></aura:attribute>
     <aura:attribute name="classDays" type="List"></aura:attribute>
+    <aura:registerEvent name="ClassFilterEvent" type="c:ClassFilterEvent"></aura:registerEvent>
 
     <aura:handler name="init" value="this" action="{!c.handleStartFilter}"></aura:handler>
     <lightning:layout multipleRows="true" class="filter_style">
@@ -15,7 +16,8 @@
                 <lightning:combobox label="Level" placeholder="Select Level" 
                                     fieldLevelHelp="Find Level of Difficulty"
                                     variant="label-stacked" value="{!v.levelSelected}"
-                                    options="{!v.classLevels}">
+                                    options="{!v.classLevels}" 
+                                    onchange="{!c.handleFilterOptionSelected}">
                 </lightning:combobox>
             </div>
         </lightning:layoutItem>
@@ -24,7 +26,8 @@
                 <lightning:combobox label="Prices" placeholder="Select Price" 
                                     fieldLevelHelp="Find Specific Price"
                                     variant="label-stacked" value="{!v.priceSelected}"
-                                    options="{!v.classPrices}">
+                                    options="{!v.classPrices}" 
+                                    onchange="{!c.handleFilterOptionSelected}">
                 </lightning:combobox>
             </div>
         </lightning:layoutItem>
@@ -33,7 +36,8 @@
                 <lightning:combobox label="Instructors" placeholder="Select Instructor" 
                                     fieldLevelHelp="Find Instructor"
                                     variant="label-stacked" value="{!v.instructorSelected}"
-                                    options="{!v.classInstructors}">
+                                    options="{!v.classInstructors}" 
+                                    onchange="{!c.handleFilterOptionSelected}">
                 </lightning:combobox>
             </div>
         </lightning:layoutItem>
@@ -42,7 +46,8 @@
                 <lightning:combobox label="Days" placeholder="Select Day" 
                                     fieldLevelHelp="Find Specific Day available"
                                     variant="label-stacked" value="{!v.daySelected}"
-                                    options="{!v.classDays}">
+                                    options="{!v.classDays}" 
+                                    onchange="{!c.handleFilterOptionSelected}">
                 </lightning:combobox>
             </div>
         </lightning:layoutItem>
