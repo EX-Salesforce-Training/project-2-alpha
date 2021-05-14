@@ -1,6 +1,12 @@
 <aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
-    <aura:attribute name="level" type="string"></aura:attribute>
+    <aura:attribute name="levelSelected" type="string"></aura:attribute>
     <aura:attribute name="classLevels" type="List"></aura:attribute>
+    <aura:attribute name="priceSelected" type="string"></aura:attribute>
+    <aura:attribute name="classPrices" type="List"></aura:attribute>
+    <aura:attribute name="instructorSelected" type="string"></aura:attribute>
+    <aura:attribute name="classInstructors" type="List"></aura:attribute>
+    <aura:attribute name="daySelected" type="string"></aura:attribute>
+    <aura:attribute name="classDays" type="List"></aura:attribute>
 
     <aura:handler name="init" value="this" action="{!c.handleStartFilter}"></aura:handler>
     <lightning:layout multipleRows="true" class="filter_style">
@@ -8,8 +14,35 @@
             <div class="header-column" >
                 <lightning:combobox label="Level" placeholder="Select Level" 
                                     fieldLevelHelp="Find Level of Difficulty"
-                                    variant="label-stacked" value="{!v.level}"
+                                    variant="label-stacked" value="{!v.levelSelected}"
                                     options="{!v.classLevels}">
+                </lightning:combobox>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small">
+            <div class="header-column" >
+                <lightning:combobox label="Prices" placeholder="Select Price" 
+                                    fieldLevelHelp="Find Specific Price"
+                                    variant="label-stacked" value="{!v.priceSelected}"
+                                    options="{!v.classPrices}">
+                </lightning:combobox>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small">
+            <div class="header-column" >
+                <lightning:combobox label="Instructors" placeholder="Select Instructor" 
+                                    fieldLevelHelp="Find Instructor"
+                                    variant="label-stacked" value="{!v.instructorSelected}"
+                                    options="{!v.classInstructors}">
+                </lightning:combobox>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small">
+            <div class="header-column" >
+                <lightning:combobox label="Days" placeholder="Select Day" 
+                                    fieldLevelHelp="Find Specific Day available"
+                                    variant="label-stacked" value="{!v.daySelected}"
+                                    options="{!v.classDays}">
                 </lightning:combobox>
             </div>
         </lightning:layoutItem>

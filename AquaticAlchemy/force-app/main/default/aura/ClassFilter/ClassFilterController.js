@@ -6,5 +6,29 @@
                              {label:'Advanced', Value:'Advanced'}
                             ];
         component.set('v.classLevels', classLevels);
+        let classPrices = [{label:'Any', Value:'Any'},
+                           {label:'$75', Value:'$75'},
+                           {label:'$150', Value:'$150'},
+                           {label:'$200', Value:'$200'}
+                          ];
+        component.set('v.classPrices', classPrices); 
+        //redo to be dynamic
+        let classInstructors = [{label:'Any', Value:'Any'},
+                           {label:'Andy Gomez', Value:'Andy Gomez'},
+                           {label:'Jackie Chan', Value:'Jackie Chan'}
+                          ];
+        component.set('v.classInstructors', classInstructors);
+        let classDays = [{label:'Any', Value:'Any'},
+                           {label:'Sunday', Value:'Sunday'},
+                           {label:'Monday', Value:'Monday'},
+                           {label:'Tuesday', Value:'Tuesday'},
+                           {label:'Wednesday', Value:'Wednesday'},
+                           {label:'Thursday', Value:'Thursday'},
+                           {label:'Friday', Value:'Friday'},
+                           {label:'Saturday', Value:'Saturday'}
+                          ];
+        component.set('v.classDays', classDays);
+        
+        
     }
 })
