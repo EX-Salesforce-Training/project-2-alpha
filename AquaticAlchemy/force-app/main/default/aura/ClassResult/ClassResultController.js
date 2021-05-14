@@ -43,6 +43,7 @@
           serv.navigate(page_reference);
      },
      handleClassFilterChange : function(component, event, helper) {
+          console.log("calling helper");
           helper.handleClassFilterChange(component, event, helper);
      }
 })
