@@ -15,7 +15,7 @@
     <aura:attribute name="classId" type="string"></aura:attribute>
     <aura:handler name="init" value="{!this}" action="{!c.RetreiveAllClasses}"></aura:handler>
     <aura:handler name="registeredFilterEvent" event="c:ClassFilterEvent" action="{!c.handleClassFilterChange}"/>
-    
+    <aura:attribute name="currAccId" type="string"></aura:attribute>
 
     <!-- Display filter -->
     <c:ClassFilter></c:ClassFilter>
@@ -90,7 +90,7 @@
                                       onclick="{!c.handleCloseRegistrationPopUp}"></lightning:button>
                 </header>
                 <div class="slds-modal__content slds-p-around_medium">
-                    <c:ClassRegistration classId="{!v.classId}"></c:ClassRegistration>
+                    <c:ClassRegistration currAccId="{!v.currAccId}" classId="{!v.classId}"></c:ClassRegistration>
                 </div>
             </div>
         </section>

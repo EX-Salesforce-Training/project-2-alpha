@@ -17,10 +17,15 @@ public with sharing class ClassResultController {
                             ];
         return allClassAvailable;
     }
-    
+    @AuraEnabled(cacheable=true)
+    public static String GetAccountId() {
+         Id userId = UserInfo.getUserId();
+        Account userAcct = [SELECT Id, OwnerId FROM Account WHERE OwnerId=:userId LIMIT 1];
+        return '' + userAcct.Id;
+    }
     @AuraEnabled(cacheable=true)
     public static list<Class__c> GetFilteredClasses(String level, String price, String instructor, String day){
-        //Using Dynamic SOQL 
+         //Using Dynamic SOQL 
         List<Class__c> filteredClasses = new List<Class__c>();
         String querySelectClasses = 'SELECT Id, Capacity__c, Name, Class_Image__c, Class_Instructor__c, Class_Price__c,';
         querySelectClasses = querySelectClasses + 'Class_Type__C, Day__c, Class_Time__c, InstructorEmail__c, InstructorName__c,';

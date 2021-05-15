@@ -45,5 +45,18 @@
 			
 		});
 		$A.enqueueAction(action, false);
+	},
+	FetchCurrentAccountId : function(component, event, helper) {
+		let action = component.get('c.GetAccountId');
+		let accId = '';
+		action.setCallback(this, function(response) {
+			if(response.getState() == "SUCCESS") {
+				let responseData = response.getReturnValue();
+				accId = responseData;
+				component.set('v.currAccId', accId);
+			}
+		});
+		$A.enqueueAction(action, false);
+		
 	}
 })

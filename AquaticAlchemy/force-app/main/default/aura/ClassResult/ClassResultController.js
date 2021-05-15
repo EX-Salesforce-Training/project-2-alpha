@@ -7,6 +7,8 @@
 ({
 	RetreiveAllClasses : function(component, event, helper) {
 		helper.RetreiveAllClassesHelper(component);
+          let checking = helper.FetchCurrentAccountId(component, event, helper);
+          
 	},
      handleInstructorDetails : function(component, event, helper) {
           let src_event = event.getSource();
@@ -43,7 +45,6 @@
           serv.navigate(page_reference);
      },
      handleClassFilterChange : function(component, event, helper) {
-          console.log("calling helper");
           helper.handleClassFilterChange(component, event, helper);
      }
 })
