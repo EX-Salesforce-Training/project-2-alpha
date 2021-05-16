@@ -1,0 +1,12 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: ApplicationCancelledEvent
+// Author: David Serrano, Salesforce Developer
+// Created: 05/12/21
+// Updated: 05/12/21
+// Description: Component event to help handle when the application modal is closed or cancelled.
+//
+///////////////////////////////////////////////////////////////
+-->
+<aura:event type="COMPONENT" description="Event template" />

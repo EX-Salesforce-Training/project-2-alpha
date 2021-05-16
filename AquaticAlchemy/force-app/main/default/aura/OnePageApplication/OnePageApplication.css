@@ -1,0 +1,26 @@
+/*
+///////////////////////////////////////////////////////////////
+//
+// Name: OnePageApplication.css
+// Author: David Serrano, Salesforce Developer
+// Created: 05/8/21
+// Updated: 05/15/21
+// Description: CSS style sheet to style the component elements
+//
+///////////////////////////////////////////////////////////////
+*/
+
+.THIS .slds-button-group{
+    background: #0b2054;
+    width: 150%;
+    margin-left: -3vh;
+	margin-top: -20px;
+    padding-left: 5vh;
+	position: fixed;
+    z-index: 99;
+}
+
+.THIS .view{
+    background: red;
+    margin-top: 30px;
+}

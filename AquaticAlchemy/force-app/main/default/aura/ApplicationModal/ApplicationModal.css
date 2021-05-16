@@ -1,0 +1,43 @@
+
+/*
+///////////////////////////////////////////////////////////////
+//
+// Name: ApplicatinModal.css
+// Author: David Serrano, Salesforce Developer
+// Created: 05/12/21
+// Updated: 05/13/21
+// Description: CSS style sheet for the modal
+//
+///////////////////////////////////////////////////////////////
+*/
+
+.THIS h1{
+    color: white;
+}
+
+.THIS p{
+    color: white;
+    padding-top: 10px;
+}
+
+.THIS .appText{
+    color: white;
+}
+
+.THIS .slds-modal__container{
+	margin-top: 5%;
+}
+
+.THIS .slds-modal__content{
+    background: #102151;
+}
+
+.THIS .slds-modal__footer{
+    background: #102151;
+}
+
+.THIS .slds-modal__header{
+    background: #102151; 
+    color: white;
+	font-weight: bold;  
+}

@@ -1,0 +1,40 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: Career.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/8/21
+// Updated: 05/15/21
+// Description: Component that will be used in the One Page Application component to display career information at Alchemy Aquatic.
+// The position and jobId are both used to pass in Job Posting information to the Application Modal.
+// The applying boolean is used to help handle the closing of the Application Modal dependent on wether it was cancelled or submitted.
+//
+///////////////////////////////////////////////////////////////
+-->
+
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler event="c:ApplyClicked" action="{!c.handleApplyEvent}"/>
+    <aura:handler name="ApplicationCancelledEvent" event="c:ApplicationCancelledEvent" action="{!c.handleCancelledApplication}"/>
+    <aura:handler name="CloseModalEvent" event="c:CloseModalEvent" action="{!c.handleCancelledApplication}"/>
+    <aura:attribute name="applying" type="Boolean" default="false"/>
+    <aura:attribute name="position" type="String"/>
+    <aura:attribute name="jobId" type="Id"/>
+
+        <aura:if isTrue="{!v.applying}">
+            <c:ApplicationModal position="{!v.position}" jobId="{!v.jobId}"/>    
+        </aura:if>
+        
+        
+        <aura:if isTrue="{!not(v.applying)}">    
+            <div class="slds-grid">
+                <div class="slds-col">
+                    <h1>Jobs at Aquatic Alchemy</h1>
+                    <p style="padding-bottom: 50px;">At Aquatic Alchemy, we are always looking for new talent to be a part of our team! If you are interested in being part of a team that puts an emphasis on helping swimmers from all walks of life alchemically transform, look no further!</p>
+                    <c:JobPostingList/>
+                </div>
+            </div>
+        </aura:if>
+
+    
+  
+</aura:component>

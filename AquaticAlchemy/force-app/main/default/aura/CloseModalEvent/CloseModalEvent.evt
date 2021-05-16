@@ -1,0 +1,15 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: CloseModalEvent.evt
+// Author: David Serrano, Salesforce Developer
+// Created: 05/12/21
+// Updated: 05/12/21
+// Description: Application event to help handle the closing of the Application Modal
+// The cancelled boolean helps close the modal properly depending on wether the application was submitted or cancelled.
+//
+///////////////////////////////////////////////////////////////
+-->
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="cancelled" type="Boolean"/>
+</aura:event>

@@ -1,0 +1,54 @@
+<aura:component>
+    <aura:registerEvent name="ApplicationCancelledEvent" type="c:ApplicationCancelledEvent"/>
+    <aura:registerEvent name="CloseModalEvent" type="c:CloseModalEvent"/>
+    <aura:attribute name="position" type="String"/>
+    <aura:attribute name="jobId" type="Id"/>
+    
+    <lightning:recordEditForm objectApiName="Employee_Application__c"
+                              onsuccess="{!c.submitAction}">
+        
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.cancelAction}" >
+                        x
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!v.position} Application</h2>
+                </header>
+                
+                
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-grid">
+                        <div class="slds-col">
+                            <p>Personal Information</p>
+                            <span class="appText">First Name</span><lightning:inputField styleClass="x" fieldName="First_Name__c" variant="label-hidden"/>
+                            <span class="appText">Last Name</span><lightning:inputField fieldName="Last_Name__c" variant="label-hidden"/>
+                            <span class="appText">Phone</span><lightning:inputField fieldName="Phone__c" variant="label-hidden"/>
+                            <span class="appText">Email</span><lightning:inputField fieldName="Email__c" variant="label-hidden"/>
+                            <p style="margin-top:30px;">Legal Information</p>
+                            <span class="appText">Are you authorized to work in the US?</span><lightning:inputField fieldName="Are_you__c" variant="label-hidden"/>
+                            <span class="appText">Certification</span><lightning:inputField fieldName="Certification__c" variant="label-hidden"/>
+                            <span class="appText">Years of Experience</span><lightning:inputField fieldName="Years_Experience__c" variant="label-hidden"/>
+                        </div>
+                        <div class="slds-col">
+                            <div class="box" style="margin-left:50px; height:95%;">
+                                <p>Resume and Cover Letter</p>
+                                <span class="appText">Upload a copy of your resume</span><lightning:input style="color:white; margin-bottom:15px;" name="file1" type="file" variant="label-hidden" accept="image/png, .zip" onchange="{!c.handleFilesChange}"/>
+                                <span class="appText">Cover letter expressing your interest in the position:</span>
+                                <div style="background:white; height:335px; border-radius:5px;"><lightning:inputField variant="label-hidden" fieldName="Cover_Letter__c"/></div>    
+                            </div>
+                            <lightning:inputField fieldName="Job_Posting__c" value="{!v.jobId}" style="display:none;"/>
+                        </div>
+                    </div>
+                    
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning:button label="Cancel" title="Cancel" onclick="{!c.cancelAction}" class="btn" />
+                    <lightning:button label="Submit" title="Submit" type="submit" class="btn" />
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </lightning:recordEditForm>
+</aura:component>

@@ -1,0 +1,31 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: JobPostingItem.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/8/21
+// Updated: 05/12/21
+// Description: Javascript controller to handle on click events.
+//
+///////////////////////////////////////////////////////////////
+-->
+
+<aura:component implements="force:hasRecordId">
+    <aura:registerEvent name="ApplyClicked" type="c:ApplyClicked"/>
+    <aura:attribute name="postId" type="Job_Postings__c"/>
+    
+    <div class="slds-grid slds-col_bump-left">
+        <div class="slds-col slds-size_1-of-12">
+            {!v.postId.Post_Date__c}
+        </div>
+        <div class="slds-col slds-size_2-of-12">
+            {!v.postId.Name}
+        </div>
+        <div class="slds-col slds-size_8-of-12">
+            {!v.postId.Description__c}
+        </div>
+        <div class="slds-col slds-size_1-of-12">
+            <lightning:button label="Apply" title="Apply" onclick="{!c.applying}"/>
+        </div>
+    </div>
+</aura:component>
