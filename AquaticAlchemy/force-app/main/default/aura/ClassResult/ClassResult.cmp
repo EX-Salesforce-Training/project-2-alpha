@@ -10,15 +10,15 @@
     <aura:attribute name="classListing" type="Class__c[]"></aura:attribute>
     <aura:attribute name="classesAvailable" type="boolean" default="false"></aura:attribute>
     <aura:attribute name="instructorDetailsClicked" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="classDetailsClicked" type="boolean" default="false"></aura:attribute>
     <aura:attribute name="instructorId" type="string"></aura:attribute>
     <aura:attribute name="registrationBttnClicked" type="boolean" default="false"></aura:attribute>
     <aura:attribute name="classId" type="string"></aura:attribute>
     <aura:handler name="init" value="{!this}" action="{!c.RetreiveAllClasses}"></aura:handler>
-    <aura:handler name="registeredFilterEvent" event="c:ClassFilterEvent" action="{!c.handleClassFilterChange}"/>
+    <aura:handler name="registeredFilterEvent" event="c:ClassFilterEvent" action="{!c.HandleClassFilterChange}"/>
     <aura:attribute name="currAccId" type="string"></aura:attribute>
     
     <!-- Display filter -->
-    <c:SummerCampRegistration></c:SummerCampRegistration>
     <c:ClassFilter></c:ClassFilter>
     <aura:if isTrue="{!v.classesAvailable}">
         <lightning:layout multipleRows="true"> 
@@ -42,11 +42,11 @@
                                     <div class="slds-p-top_small"> 
                                         <lightning:buttonGroup>
                                             <lightning:button class="button_style" variant="brand-outline" label="Class Overview" 
-                                                             value="{!prop.Id}" onclick="{!c.navigateToAllDetails}"></lightning:button>
+                                                             value="{!prop.Id}" onclick="{!c.HandleClassDetailsPopUp}"></lightning:button>
                                             <lightning:button class="button_style" variant="brand-outline" label="Register" 
-                                                             value="{!prop.Id}" onclick="{!c.handleRegistrationPopUp}"></lightning:button>
+                                                             value="{!prop.Id}" onclick="{!c.HandleRegistrationPopUp}"></lightning:button>
                                             <lightning:button class="button_style" variant="brand-outline" label="Instructor Details" 
-                                                             value="{!prop.Class_Instructor__c}" onclick="{!c.handleInstructorDetails}"></lightning:button>
+                                                             value="{!prop.Class_Instructor__c}" onclick="{!c.HandleInstructorDetailsPopUp}"></lightning:button>
                                         </lightning:buttonGroup>
                                     </div>
                                 </lightning:layoutItem>
@@ -61,7 +61,25 @@
         <span>Class Listing aren't visible yet. </span>
     </aura:set>
     </aura:if>
-
+<!-- Beginning Class  Details Modal Code Block  -->
+<aura:if isTrue="{!v.classDetailsClicked}"> 
+    <div style="margin-top:5%">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" >
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:card title="Class Details" iconName="standard:contact">
+                        <lightning:buttonIcon class="slds-modal__close" iconName="utility:close" 
+                        onclick="{!c.HandleCloseClassDetails}"></lightning:buttonIcon>
+                    </lightning:card>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" >
+                    <c:ClassOverview classId="{!v.classId}"></c:ClassOverview>
+                </div>
+            </div>
+        </section>
+    </div>
+</aura:if>
+<!-- Ending Class Details Modal Code Block  -->
 <!-- Beginning Instructor Details Modal Code Block  -->
 <aura:if isTrue="{!v.instructorDetailsClicked}"> 
     <div style="margin-top:5%">
@@ -70,7 +88,7 @@
                 <header class="slds-modal__header">
                     <lightning:card title="Instructor Details" iconName="standard:contact">
                         <lightning:buttonIcon class="slds-modal__close" iconName="utility:close" 
-                        onclick="{!c.handleCloseInstructorDetails}"></lightning:buttonIcon>
+                        onclick="{!c.HandleCloseInstructorDetails}"></lightning:buttonIcon>
                     </lightning:card>
                 </header>
                 <div class="slds-modal__content slds-p-around_medium" >
@@ -88,7 +106,7 @@
             <div class="slds-modal__container">
                 <header class="slds-modal__header">
                     <lightning:button class="slds-modal__close" iconName="utility:close"
-                                      onclick="{!c.handleCloseRegistrationPopUp}"></lightning:button>
+                                      onclick="{!c.HandleCloseRegistrationPopUp}"></lightning:button>
                 </header>
                 <div class="slds-modal__content slds-p-around_medium">
                     <c:ClassRegistration currAccId="{!v.currAccId}" classId="{!v.classId}"></c:ClassRegistration>

@@ -1,11 +1,62 @@
  <aura:component  implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
     <aura:attribute name="classId" type="string"></aura:attribute>
-    
-    <lightning:tabset variant="scoped">
-        <lightning:tab label="Class Info">
-
-        </lightning:tab>
-        <lightning:tab label="Cost Info"></lightning:tab>
-        <lightning:tab label="Instructor Info"></lightning:tab>
-    </lightning:tabset>
+    <lightning:recordViewForm recordId="{!v.classId}" objectApiName="Class__c">
+        <lightning:layout>
+            <div class="slds-box slds-grid slds-wrap slds-p-around_small">
+                <div class="slds-col" style="margin-top:2%; width:10%;">
+                    <img src="{!$Resource.joe_golberg}"/>
+                    <!-- 
+                    <lightning:outputField fieldName="Instructor_Photo__c" variant="label-hidden"></lightning:outputField>
+                    -->
+                </div>
+                <div class="slds-col" style="margin-left:4%;">
+                    <lightning:layoutItem>
+                        <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Name" variant="label-hidden"></lightning:outputField>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem>
+                        <div class="slds-box slds-grid slds-wrap slds-p-around_small">
+                            <div class="slds-col" >
+                                <lightning:layoutItem>
+                                    <span>Price </span>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                    <span>Capacity </span>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                    <span>Class Time </span>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                    <span>Level </span>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                    <span>Start Date </span>
+                                </lightning:layoutItem>
+                                
+                                
+                            </div>
+                            <div class="slds-col" >
+                                <lightning:layoutItem>
+                                    <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Class_Price__c" variant="label-hidden"></lightning:outputField>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                     <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Capacity__c" variant="label-hidden"></lightning:outputField>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                     <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Class_Time__c" variant="label-hidden"></lightning:outputField>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                     <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Level__c" variant="label-hidden"></lightning:outputField>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                     <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Start_Date__c" variant="label-hidden"></lightning:outputField>
+                                </lightning:layoutItem>
+                                
+                            </div>
+                       </div>
+                    </lightning:layoutItem>
+                    
+                </div>
+            </div>
+        </lightning:layout>
+    </lightning:recordViewForm>
 </aura:component>	

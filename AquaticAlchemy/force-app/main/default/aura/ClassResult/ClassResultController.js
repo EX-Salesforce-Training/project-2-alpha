@@ -10,41 +10,35 @@
           let checking = helper.FetchCurrentAccountId(component, event, helper);
           
 	},
-     handleInstructorDetails : function(component, event, helper) {
+     HandleInstructorDetailsPopUp : function(component, event, helper) {
           let src_event = event.getSource();
           let instr_id = src_event.get('v.value');
           component.set('v.instructorId', instr_id);
           component.set('v.instructorDetailsClicked', "true");
      },
-     handleCloseInstructorDetails : function(component, event, helper) {
-          component.set('v.instructorDetailsClicked', "false");
-     },
-     handleCloseRegistrationPopUp : function(component, event, helper) {
-          component.set('v.registrationBttnClicked', "false");
-     },
-     handleRegistrationPopUp : function(component, event, helper) {
+     HandleRegistrationPopUp : function(component, event, helper) {
           let src = event.getSource();
           let classId = src.get('v.value');
           component.set('v.classId', classId);
           component.set('v.registrationBttnClicked', "true");
      }, 
-     navigateToAllDetails : function(component, event, helper) {
-          let serv = component.find("navigation_service");
-          let src = event.getSource();
-          let classId = src.get('v.value');
-          let page_reference = {
-               type:"standard__component",
-               attribute: {
-                    componentName: "c__ClassOverview"
-               },
-               state: {
-                    "c__classId": classId
-               }
-          };
-          component.set("v.page_reference", page_reference);
-          serv.navigate(page_reference);
+     HandleClassDetailsPopUp : function(component, event, helper) {
+          let src_event = event.getSource();
+          let class_id = src_event.get('v.value');
+          component.set('v.classId', class_id);
+          component.set('v.classDetailsClicked', true);
      },
-     handleClassFilterChange : function(component, event, helper) {
+     HandleCloseClassDetails : function(component, event, helper) {
+          component.set("v.classDetailsClicked", false);
+     },
+     HandleCloseInstructorDetails : function(component, event, helper) {
+          component.set("v.instructorDetailsClicked", false);
+     },
+     HandleCloseRegistrationPopUp : function(component, event, helper) {
+          component.set('v.registrationBttnClicked', "false");
+         
+     },
+     HandleClassFilterChange : function(component, event, helper) {
           helper.handleClassFilterChange(component, event, helper);
      }
 })
