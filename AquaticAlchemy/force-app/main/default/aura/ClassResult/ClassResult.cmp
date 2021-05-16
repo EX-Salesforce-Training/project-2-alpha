@@ -16,8 +16,9 @@
     <aura:handler name="init" value="{!this}" action="{!c.RetreiveAllClasses}"></aura:handler>
     <aura:handler name="registeredFilterEvent" event="c:ClassFilterEvent" action="{!c.handleClassFilterChange}"/>
     <aura:attribute name="currAccId" type="string"></aura:attribute>
-
+    
     <!-- Display filter -->
+    <c:SummerCampRegistration></c:SummerCampRegistration>
     <c:ClassFilter></c:ClassFilter>
     <aura:if isTrue="{!v.classesAvailable}">
         <lightning:layout multipleRows="true"> 
