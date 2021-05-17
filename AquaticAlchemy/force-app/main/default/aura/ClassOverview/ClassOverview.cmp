@@ -12,6 +12,7 @@
                 <div class="slds-col" style="margin-left:4%;">
                     <lightning:layoutItem>
                         <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Name" variant="label-hidden"></lightning:outputField>
+                        <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Product__c" variant="label-hidden"></lightning:outputField>
                     </lightning:layoutItem>
                     <lightning:layoutItem>
                         <div class="slds-box slds-grid slds-wrap slds-p-around_small">
@@ -31,8 +32,6 @@
                                 <lightning:layoutItem>
                                     <span>Start Date </span>
                                 </lightning:layoutItem>
-                                
-                                
                             </div>
                             <div class="slds-col" >
                                 <lightning:layoutItem>
