@@ -1,0 +1,12 @@
+<aura:component>
+    <aura:registerEvent name="returnButton" type="c:contactButtonEvent"/>
+    <aura:attribute name="contactID" type="String"/>
+    <lightning:recordEditForm recordId="{!v.contactID}" objectApiName="Contact">
+            <lightning:card title="Other Contact">
+                <lightning:inputField fieldName="Name" />
+                <lightning:inputField fieldName="Email" />
+                <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" />
+            </lightning:card>
+        </lightning:recordEditForm>
+    <lightning:button name="return" label="Return" onclick="{!c.handleReturnButton}"/>
+</aura:component>
