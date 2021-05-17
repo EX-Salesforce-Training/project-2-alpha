@@ -21,7 +21,7 @@
                 }
             </style>
         </head>
-        <body id = "body" class="slds-scope">
+        <body id = "body" class="slds-scope" style="background-image: url({!URLFOR($Resource.aa, 'logo.jpg')}) !important; background-size:cover;">
             
             <apex:slds />
             <div id = "form">

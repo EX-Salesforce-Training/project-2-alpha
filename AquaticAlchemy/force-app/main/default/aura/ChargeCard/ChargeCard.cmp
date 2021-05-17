@@ -1,0 +1,18 @@
+<aura:component >
+    <aura:attribute name="chargeName" type="String"  />
+    <aura:attribute name="chargeAmount" type="String" />
+    <aura:attribute name="chargeID" type="String"/>
+    <aura:registerEvent name="checkboxEvent" type="c:Checked"/>
+	<lightning:card title="Charge">
+            <aura:set attribute="actions">
+                <ui:inputCheckbox aura:id="checkbox" label="Select" change="{!c.onCheck}"/>
+            </aura:set>
+            <div class="slds-p-horizontal_small">
+                    <div class="slds-box">
+                        <p>{!v.chargeName}</p>
+                        <p>{!v.chargeAmount}</p>
+                        <p><ui:outputText class="result" aura:id="checkResult" value="false" /></p>
+                    </div>
+            </div>
+        </lightning:card>
+</aura:component>

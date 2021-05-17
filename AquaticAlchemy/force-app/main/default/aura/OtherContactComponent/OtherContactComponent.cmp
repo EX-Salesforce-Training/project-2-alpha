@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:registerEvent name="contactButton" type="c:contactButtonEvent"/>
+    <aura:registerEvent name="contactSelected" type="c:contactSetter"/>
+    <aura:attribute name="contactID" type="String"/>
+    <aura:attribute name="contactName" type="String"/>
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <lightning:button name="modal" label="{!v.contactName}" onclick="{!c.handleButtonClick}"/>
+</aura:component>
