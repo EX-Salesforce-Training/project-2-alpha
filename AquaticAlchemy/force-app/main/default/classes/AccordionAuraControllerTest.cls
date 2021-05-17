@@ -30,25 +30,40 @@ public class AccordionAuraControllerTest {
         List<Public_Event__c> campList = new List<Public_Event__c>();
 
         for(Integer i = 0; i < 5; i++){
-            Public_Event__c e = new Public_Event__c(Name='Camp'+i, Summer_Camp__c=true, RecordTypeId='0125e000000YN3eAAG'); 
+            Public_Event__c e = new Public_Event__c(Name='Camp'+i, Summer_Camp__c=true, RecordTypeId='0125e000000YN3eAAG', StartDateTime__c=Datetime.now(), EndDateTime__c=Datetime.now()); 
             campList.add(e);
         }
         insert campList;
         
         List<Public_Event__c> generatedList = AccordionAuraController.getCampSchedules();
         
+        // checking the getCampSchedules only returns three summer camp events as it has a limit on how many to return
         system.assertEquals(3, generatedList.size());
         
-        // query for public events to get their IDs properly 
+        // query public events for a list of camp events to obtain the id
+        campList = [SELECT Id FROM Public_Event__c WHERE Summer_Camp__c=true];
         List<Camp_Day__c> dayList = new List<Camp_Day__c>();
+        Map<Id,Integer> dayAmounts = new Map<Id,Integer>();
+
+        // generate day schedules for each given camp
         for(Public_Event__c e:generatedList){
-            for(Integer i = 0; i < 5; i++){
-                Camp_Day__c c = new Camp_Day__c(Name='Day '+1, Public_Event__c=e.Id);
+            // generating random number between 1-5 to create a varied amount of day schedules for each camp
+            Integer randomNumber = Integer.valueof((Math.random() * 4))+1;
+            dayAmounts.put(e.Id, randomNumber);
+            for(Integer i = 0; i < randomNumber; i++){
+                Camp_Day__c c = new Camp_Day__c(Name='Day '+1, Public_Event__c=e.Id, Start_Time__c=Datetime.now(), End_Time__c=Datetime.now());
                 dayList.add(c);
             }
+
         }
         insert dayList;
-        // pass in id to getDay
+
+        // check that for each camp, the appropriate amount of day schedules are returned
+        for(Public_Event__c e:generatedList){
+            Integer days = dayAmounts.get(e.Id);
+            List<Camp_Day__c> generatedDayList = AccordionAuraController.getDaySchedules(e.Id);
+            system.assertEquals(days, generatedDayList.size());
+        }
 
     }
 

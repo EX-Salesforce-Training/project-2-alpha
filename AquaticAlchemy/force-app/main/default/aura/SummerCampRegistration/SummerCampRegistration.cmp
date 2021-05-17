@@ -1,8 +1,8 @@
 <aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
     <aura:attribute name="classId" type="string"></aura:attribute>
     <aura:attribute name="currAccId" type="string"></aura:attribute>
-    
-    <lightning:card title="Register Today" >
+
+    <lightning:card title="Register Today!" >
              <div class="slds-p-around_small">
                 <lightning:recordEditForm objectApiName="Class_Registration__c" onsuccess="">
                     <lightning:inputField fieldName="Class__c" value="{!v.classId}" variant="label-stacked" disabled="true"></lightning:inputField>

@@ -12,4 +12,12 @@
 
 .THIS {
     border-radius: 5px;
+    display: block;
 }
+
+.THIS .slds-carousel__content{
+    background: #78CCFD;
+    opacity: .9;
+    color: #102151;
+}
+
