@@ -1,3 +1,8 @@
+.THIS {
+    display: block;
+    margin-top: 400px;
+}
+
 .THIS .form {
     background-color: #16355F;
     border-style: solid;
@@ -19,6 +24,7 @@
 .THIS .btn{
     color: #FFFFFF;
     background-color: #304C74;
+    margin-top: 25px;
 }
 
 .THIS .btn:hover{

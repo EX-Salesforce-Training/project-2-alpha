@@ -1,10 +1,6 @@
 <aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
-    <aura:html tag="style">
-        html {
-        background-color: #78CCFD;
-        }
-    </aura:html>
-    
+
+    <div>    
     <lightning:recordEditForm objectApiName="Public_Event__c" onsuccess="{!c.ClearFields}">
         <div class="form">
             <div class="slds-grid">
@@ -25,6 +21,6 @@
             <lightning:button class="btn" type="submit" label="Create" />  
         </div>
     </lightning:recordEditForm>
-    
+    </div>
     
 </aura:component>
