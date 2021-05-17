@@ -1,0 +1,20 @@
+<aura:component controller = "ApexCarouselController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="events" type="Public_Event__c[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.CarouselController}"/>
+    <aura:attribute name="eventsAvailable" type="Boolean" default="false"/>
+    
+    <aura:if isTrue = "{!v.eventsAvailable}">
+        <div style="height:500px;width:600px;margin-left:20px;margin-top:10px;">
+            <lightning:carousel disableAutoRefresh="false" disableAutoScroll="false">
+                <aura:iteration items="{!v.events}" var="event">
+                    <lightning:carouselImage src = "{!event.Image__c}"
+                                             header = "{!event.Name}"
+                                             description = "{!event.Description__c}"
+                                             class="img">
+                    </lightning:carouselImage>
+                </aura:iteration>
+            </lightning:carousel> 
+        </div>
+    </aura:if>
+    
+</aura:component>

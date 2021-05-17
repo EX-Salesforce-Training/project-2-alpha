@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:html tag="style">
+        html {
+        background-color: #78CCFD;
+        }
+    </aura:html>
+    
+    <lightning:recordEditForm objectApiName="Public_Event__c" onsuccess="{!c.ClearFields}">
+        <div class="form">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-3" style="padding-right:30px;">
+                    <span class="label">Event Name</span><lightning:inputField aura:id="name" fieldName="Name" variant="label-hidden"/>
+                    <span class="label">Description</span><lightning:inputField aura:id="description" fieldName="Description__c" variant="label-hidden"/>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <span class="label">Activity Date</span><lightning:inputField aura:id="activitydate" fieldName="ActivityDate__c" variant="label-hidden"/>
+                    <span class="label">End Date Time</span><lightning:inputField aura:id="endtime" fieldName="EndDateTime__c" variant="label-hidden"/>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <span class="label">Event Type</span><lightning:inputField aura:id="subject" fieldName="Subject__c" variant="label-hidden"/>
+                    <span class="label">Is All Day Event</span><lightning:inputField aura:id="isallday" fieldName="IsAllDayEvent__c" variant="label-hidden"/>
+                </div>
+            </div>
+            <br/>
+            <lightning:button class="btn" type="submit" label="Create" />  
+        </div>
+    </lightning:recordEditForm>
+    
+    
+</aura:component>

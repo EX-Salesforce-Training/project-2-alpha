@@ -1,0 +1,17 @@
+.THIS  {
+    background-color: #16355F;
+    border-style: solid;
+    border-color: #FFFFFF;
+    margin-top: 10px;
+    margin-right: 20px;
+   
+}
+
+.THIS .field > *{
+    color: white;
+    border-color: grey;
+}
+
+.THIS .slds-form-element__static{
+    color:white;
+}
