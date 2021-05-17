@@ -54,7 +54,7 @@ public class AccordionAuraController {
                                           FROM Camp_Day__c WHERE Public_Event__c=:campId ORDER BY Start_Time__c ASC LIMIT 5] ;
         
         for(Camp_Day__c d:daySchedules){
-            if(e.Start_Time__c != NULL  && e.End_Time__c != NULL){
+            if(d.Start_Time__c != NULL  && d.End_Time__c != NULL){
                 d.Start_Time_String__c = d.Start_Time__c.format('hh:mm a');
                 d.End_Time_String__c = d.End_Time__c.format('hh:mm a');
             }

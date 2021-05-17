@@ -160,19 +160,6 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Class Registrations</pluralLabel>
-    <profileSearchLayouts>
-        <fields>NAME</fields>
-        <fields>Charge__c</fields>
-        <fields>Class__c</fields>
-        <fields>Date_Registered__c</fields>
-        <fields>Account__c</fields>
-        <profileName>System Administrator</profileName>
-    </profileSearchLayouts>
-    <searchLayouts>
-        <searchResultsAdditionalFields xsi:nil="true"></searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Charge__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
-    </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

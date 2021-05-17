@@ -42,8 +42,8 @@ public class AccordionAuraControllerTest {
         // query for public events to get their IDs properly 
         List<Camp_Day__c> dayList = new List<Camp_Day__c>();
         for(Public_Event__c e:generatedList){
-            for(Intger i = 0; i < 5; i++){
-                Camp_Day__c c = new Cap_Day__c(Name='Day '+1, Public_Event__c=e.Id);
+            for(Integer i = 0; i < 5; i++){
+                Camp_Day__c c = new Camp_Day__c(Name='Day '+1, Public_Event__c=e.Id);
                 dayList.add(c);
             }
         }
