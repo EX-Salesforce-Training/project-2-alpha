@@ -6,6 +6,8 @@
     }
   ],
   "namespace": "",
+
   "sfdcLoginUrl": "https://curious-goat-ophonn-dev-ed.my.salesforce.com/",
+
   "sourceApiVersion": "51.0"
 }

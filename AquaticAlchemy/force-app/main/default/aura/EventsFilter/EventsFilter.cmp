@@ -1,0 +1,16 @@
+<aura:component controller="ApexFilterController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="events" type="Public_Event__c[]" />
+    <div class="list">
+        <span style="color:white;">Filter Date</span><lightning:input aura:id="date" type="date" name="filterDate" label="Filter Date" variant="label-hidden"/>
+        <aura:iteration items="{!v.events}" var="event">
+            <lightning:recordViewForm recordId="{!event.Id}" objectApiName="Public_Event__c">
+                <div style="border-color:grey;"> <lightning:outputField fieldName="Subject__c" class="field"/></div>
+                <lightning:outputField fieldName="ActivityDate__c" class="field"/>
+                <lightning:outputField fieldName="EndDateTime__c" class="field"/>
+                <lightning:outputField fieldName="IsAllDayEvent__c" class="field"/>
+            </lightning:recordViewForm>
+        </aura:iteration>
+    <lightning:button label="Filter" title="Filter Events" onclick="{!c.FilterController}"/>
+    </div>
+    
+</aura:component>

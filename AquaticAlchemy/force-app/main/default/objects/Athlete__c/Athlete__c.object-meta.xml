@@ -143,23 +143,22 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>true</enableActivities>
+    <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
+    <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Public Event</label>
+    <label>Athlete</label>
     <nameField>
-        <label>Event Name</label>
-        <trackHistory>false</trackHistory>
+        <label>Athlete Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Public Events</pluralLabel>
+    <pluralLabel>Athletes</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
