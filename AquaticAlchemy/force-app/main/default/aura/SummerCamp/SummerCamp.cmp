@@ -21,7 +21,7 @@
         <div class="slds-col slds-size_1-of-3">
             <div style="height:100px;">
                 <c:SummerCampCarousel/>   
-                
+                <c:SummerCampRegistration/>
             </div>
         </div>
     </div>

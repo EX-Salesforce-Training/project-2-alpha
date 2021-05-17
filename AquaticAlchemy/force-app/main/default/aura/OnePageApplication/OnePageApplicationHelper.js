@@ -27,7 +27,7 @@
                 bool = true;
                 component.set("v.homePage", bool);
                 component.set("v.campPage", !bool);
-                component.set("v.leaguePage", !bool);
+                component.set("v.accountPage", !bool);
                 component.set("v.classesPage", !bool);
                 component.set("v.careerPage", !bool);
                 break;
@@ -40,7 +40,7 @@
                 bool = true;
                 component.set("v.homePage", !bool);
                 component.set("v.campPage", bool);
-                component.set("v.leaguePage", !bool);
+                component.set("v.accountPage", !bool);
                 component.set("v.classesPage", !bool);
                 component.set("v.careerPage", !bool);
                 
@@ -54,7 +54,7 @@
                 bool = true;
                 component.set("v.homePage", !bool);
                 component.set("v.campPage", !bool);
-                component.set("v.leaguePage", bool);
+                component.set("v.accountPage", bool);
                 component.set("v.classesPage", !bool);
                 component.set("v.careerPage", !bool);
                 break;
@@ -67,7 +67,7 @@
                 bool = true;
                 component.set("v.homePage", !bool);
                 component.set("v.campPage", !bool);
-                component.set("v.leaguePage", !bool);
+                component.set("v.accountPage", !bool);
                 component.set("v.classesPage", bool);
                 component.set("v.careerPage", !bool);
                 break;
@@ -80,7 +80,7 @@
                 bool = true;
                 component.set("v.homePage", !bool);
                 component.set("v.campPage", !bool);
-                component.set("v.leaguePage", !bool);
+                component.set("v.accountPage", !bool);
                 component.set("v.classesPage", !bool);
                 component.set("v.careerPage", bool);
                 break;

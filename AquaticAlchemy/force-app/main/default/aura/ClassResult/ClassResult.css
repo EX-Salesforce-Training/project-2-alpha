@@ -1,26 +1,14 @@
+.THIS {
+    height: 70vh;
+    margin-bottom: 300px;
+    padding-top: 40px;
+}
+
 .THIS .button_style{
     margin: 7px;
 }
 
-.THIS .bttn:before {
-    content:"";
-    position:absolute;
-    left: 0;
-    top: 0;
-    background-color: blue;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    transform-origin: bottom left;
-    transform: translatex(-20rem);
-    transition: transform 0.5s;
-}
-
-.THIS .bttn:hover {
-    color: blue;
-    background-color: transparent;
-}
-
-.THIS .bttn:hover:before {
-    transform: translateX(0px);
+.THIS .slds-button-group{
+    background: none!important;
+    margin-left: auto!important;
 }

@@ -15,7 +15,7 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
     <aura:attribute name="homePage" type="Boolean" default="true"/>
     <aura:attribute name="campPage" type="Boolean" default="false"/>
-    <aura:attribute name="leaguePage" type="Boolean" default="false"/>
+    <aura:attribute name="accountPage" type="Boolean" default="false"/>
     <aura:attribute name="careerPage" type="Boolean" default="false"/>
     <aura:attribute name="classesPage" type="Boolean" default="false"/>
     
@@ -23,9 +23,9 @@
         <lightning:buttonGroup class="navBar">
             <lightning:button label="Home" variant="brand" onclick="{!c.btnClicked}"/>
          	<lightning:button label="Summer Camp" variant="brand" onclick="{!c.btnClicked}"/>
-            <lightning:button label="Swim League" variant="brand" onclick="{!c.btnClicked}"/>
             <lightning:button label="Classes" variant="brand" onclick="{!c.btnClicked}"/>
             <lightning:button label="Careers" variant="brand" onclick="{!c.btnClicked}"/>
+            <lightning:button label="Account" variant="brand" onclick="{!c.btnClicked}"/>
         </lightning:buttonGroup>
     </div>
     
@@ -38,22 +38,12 @@
             <c:SummerCamp/>
         </aura:if>
         
-        <aura:if isTrue="{!v.leaguePage}">
-            <div style="    background: lightblue
-                        border-radius: 5px;
-                        height: 70vh;
-                        margin: 0px 25px 0px 25px;
-                        opacity: .9;
-                        padding: 40px;">leagues page</div>
+        <aura:if isTrue="{!v.accountPage}">
+            <div style="">account page</div>
         </aura:if>
         
         <aura:if isTrue="{!v.classesPage}">
-            <div style="    background: lightblue;
-                        border-radius: 5px;
-                        height: 70vh;
-                        margin: 0px 25px 0px 25px;
-                        opacity: .9;
-                        padding: 40px;">classes page</div>
+            <c:ClassResult/>
         </aura:if>
         
         <aura:if isTrue="{!v.careerPage}">

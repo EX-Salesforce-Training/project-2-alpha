@@ -18,6 +18,7 @@
     <aura:attribute name="currAccId" type="string"></aura:attribute>
     
     <!-- Display filter -->
+    <div>
     <c:ClassFilter></c:ClassFilter>
     <aura:if isTrue="{!v.classesAvailable}">
         <lightning:layout multipleRows="true"> 
@@ -114,6 +115,7 @@
         </section>
     </div>
 </aura:if>
+</div>
 <!-- Ending Registration Modal Code Block  -->
 </aura:component>
 
