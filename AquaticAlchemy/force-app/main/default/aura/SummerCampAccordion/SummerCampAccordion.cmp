@@ -1,0 +1,47 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: SummerCampAccordion.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/13/21
+// Updated: 05/14/21
+// Description: Accordion component that helps display a tab for Summer Camp Schedules and FAQ.
+// The articles attribute holds a list of frequently asked questions to display.
+// The schedules attribute holds a list of Summer Camp event schedules to display.
+// The init handler helps initialize the component with data to display.
+//
+///////////////////////////////////////////////////////////////
+-->
+
+<aura:component controller="AccordionAuraController">
+    <aura:handler name="init" value="{!this}" action="c.doInit"/>
+    <aura:attribute name="articles" type="Knowledge__kav[]"/>
+    <aura:attribute name="schedules" type="Public_Event__c[]"/>
+    
+    <div>
+        <lightning:accordion aura:id="accordion" activeSectionName="C">
+            
+            <lightning:accordionSection name="A" label="Camp Schedules">
+            
+                <aura:iteration items="{!v.schedules}" var="schedule">
+                    <c:CampSchedule schedule="{!schedule}"/>
+                </aura:iteration>
+            </lightning:accordionSection>
+            
+            <div>
+                <lightning:accordionSection name="B" label="FAQ">
+                    <aura:iteration items="{!v.articles}" var="article">
+                        <c:FAQ question="{!article.Question__c}" answer="{!article.Answer__c}"/>
+                    </aura:iteration>
+                </lightning:accordionSection>
+            </div>
+            
+            <div style="display:none;">
+                <lightning:accordionSection name="C" label=" ">
+                </lightning:accordionSection>
+            </div>
+            
+        </lightning:accordion>
+    </div>
+    
+</aura:component>

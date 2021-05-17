@@ -1,0 +1,23 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: CampDaySchedule.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/14/21
+// Updated: 05/14/21
+// Description: Item component that helps display schedule information of a specific camp day.
+// The campDay attribute receives the the Camp Day custom object to display necessary data.
+//
+///////////////////////////////////////////////////////////////
+-->
+<aura:component >
+    <aura:attribute name="campDay" type="Camp_Day__c"/>
+    
+    <div>
+        <h4>{!v.campDay.Name}</h4>
+        <span>{!v.campDay.Start_Time_String__c} - {!v.campDay.End_Time_String__c}</span>
+        <p>{!v.campDay.Activities__c}</p>
+ 
+    </div>
+	
+</aura:component>

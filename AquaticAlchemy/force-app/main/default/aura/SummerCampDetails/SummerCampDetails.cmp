@@ -1,0 +1,23 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: SummerCampDetails.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/13/21
+// Updated: 05/13/21
+// Description: Component to help display information about Summer Camps at Aquatic Alchemy.
+//
+/////////////////////////////////////////////////////////////// 
+-->
+
+<aura:component >
+    <div style="padding:25px;">
+    	<h1>Camp Alchemy!</h1>
+        <h2 style="border-bottom:1px solid white; padding-bottom:15px;">Summer Enrichment Program</h2>
+        <p>Camping, like many programs, is about learning skills, developing character and making friends. Kids become a community as they learn both how to be more independent and how to contribute to a group as they engage in physical, social and educational activities.</p>
+    </div>
+    
+    <c:SummerCampAccordion/>
+    
+
+</aura:component>

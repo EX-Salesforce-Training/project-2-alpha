@@ -1,3 +1,15 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: ApplicatinModal.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/12/21
+// Updated: 05/13/21
+// Description: Modal component to handle the visual elements of the Job Application
+//
+///////////////////////////////////////////////////////////////
+-->
+
 <aura:component>
     <aura:registerEvent name="ApplicationCancelledEvent" type="c:ApplicationCancelledEvent"/>
     <aura:registerEvent name="CloseModalEvent" type="c:CloseModalEvent"/>
