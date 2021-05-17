@@ -31,7 +31,7 @@
     
     <div class="view">
         <aura:if isTrue="{!v.homePage}">
-            <c:SummerCamp/>
+            <c:EventScheduler/>
         </aura:if>
         
         <aura:if isTrue="{!v.campPage}">   
