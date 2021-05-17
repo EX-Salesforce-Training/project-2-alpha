@@ -2,9 +2,12 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Image__c</fullName>
     <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Subject__c , &quot;Aquatic Class&quot;) ,  &quot;/resource/class&quot;, IF( ISPICKVAL( Subject__c, &quot;Swim Meet&quot;) , &quot;/resource/meet&quot;, IF( ISPICKVAL( Subject__c , &quot;Birthday Party&quot;), &quot;/resource/cake&quot;, &quot; &quot; ) ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Image</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Url</type>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

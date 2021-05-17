@@ -39,7 +39,7 @@
         </aura:if>
         
         <aura:if isTrue="{!v.accountPage}">
-            <div style="">account page</div>
+            <c:AccountComponent/>
         </aura:if>
         
         <aura:if isTrue="{!v.classesPage}">
