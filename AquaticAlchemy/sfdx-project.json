@@ -6,6 +6,8 @@
     }
   ],
   "namespace": "",
-  "sfdcLoginUrl": "https://empathetic-otter-q5v8ol-dev-ed.my.salesforce.com",
+
+  "sfdcLoginUrl": "https://curious-goat-ophonn-dev-ed.my.salesforce.com/",
+
   "sourceApiVersion": "51.0"
 }
