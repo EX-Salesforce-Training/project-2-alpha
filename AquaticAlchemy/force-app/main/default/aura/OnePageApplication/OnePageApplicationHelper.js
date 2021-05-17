@@ -84,6 +84,19 @@
                 component.set("v.classesPage", !bool);
                 component.set("v.careerPage", bool);
                 break;
+            case "Account":
+                bool = component.get("v.accountPage");
+                console.log(clicked+": "+bool);
+                if(bool == true){
+                    return;
+                }
+                bool = true;
+                component.set("v.homePage", !bool);
+                component.set("v.campPage", !bool);
+                component.set("v.accountPage", bool);
+                component.set("v.classesPage", !bool);
+                component.set("v.careerPage", !bool);
+                break;
         }
         
     }

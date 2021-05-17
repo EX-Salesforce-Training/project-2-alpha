@@ -10,6 +10,7 @@
     <aura:handler name="contactButton" event="c:contactButtonEvent" action="{!c.handleButtonEvent}"/>
     <aura:handler name="returnButton" event="c:contactButtonEvent" action="{!c.handleButtonEvent}"/>
     <aura:handler name="contactSelected" event="c:contactSetter" action="{!c.setContact}"/>
+    <div>
     <aura:if isTrue="{!v.contactNotShowing}" >
         <lightning:recordEditForm recordId="{!v.userAccount}" objectApiName="Account">
             <lightning:card title="Account">
@@ -37,5 +38,5 @@
     <aura:if isTrue="{!v.contactView}">
         <c:modalContent contactID="{!v.contactSelected}"/>
     </aura:if>
-    
+</div>
 </aura:component>
