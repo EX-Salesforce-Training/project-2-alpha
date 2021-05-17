@@ -130,6 +130,16 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -151,7 +161,16 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Classes</pluralLabel>
-    <searchLayouts></searchLayouts>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Capacity__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Class_Image__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Class_Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Class_Time__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Class_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Day__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Instructor__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>InstructorEmail__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

@@ -1,0 +1,121 @@
+  
+<!-- Name: ClassResult Page
+     Author: Andreology
+     Created: 05/07/2021
+     Updated: 05/08/2021
+     Description: This Page will show a list of classes available currently
+-->
+<aura:component controller="ClassResultController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+	<!-- Attributes Instantiated -->
+    <aura:attribute name="classListing" type="Class__c[]"></aura:attribute>
+    <aura:attribute name="classesAvailable" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="instructorDetailsClicked" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="classDetailsClicked" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="instructorId" type="string"></aura:attribute>
+    <aura:attribute name="registrationBttnClicked" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="classId" type="string"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.RetreiveAllClasses}"></aura:handler>
+    <aura:handler name="registeredFilterEvent" event="c:ClassFilterEvent" action="{!c.HandleClassFilterChange}"/>
+    <aura:attribute name="currAccId" type="string"></aura:attribute>
+    
+    <!-- Display filter -->
+    <c:ClassFilter></c:ClassFilter>
+    <aura:if isTrue="{!v.classesAvailable}">
+        <lightning:layout multipleRows="true"> 
+            <aura:iteration items="{!v.classListing}" var="prop">
+                <lightning:layoutItem padding="around-small" size="6">
+                    <lightning:layout multipleRows="true">
+                        <div class="slds-box"  style="width:100%;background-color:white;">
+                            <lightning:layout>
+                                <lightning:layoutItem size="4" padding="around-small">
+                                    <img src="{!$Resource.Swim}"/>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem size="8" padding="around-small">
+                                    <lightning:card title="{!prop.Name}">
+                                        <lightning:layoutItem size="12">
+                                            <p style="color:red">Price: {!prop.Class_Price__c}</p>
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem size="12">
+                                            <p>Capacity: {!prop.Capacity__c}</p>
+                                        </lightning:layoutItem>
+                                    </lightning:card>
+                                    <div class="slds-p-top_small"> 
+                                        <lightning:buttonGroup>
+                                            <lightning:button class="button_style" variant="brand-outline" label="Class Overview" 
+                                                             value="{!prop.Id}" onclick="{!c.HandleClassDetailsPopUp}"></lightning:button>
+                                            <lightning:button class="button_style" variant="brand-outline" label="Register" 
+                                                             value="{!prop.Id}" onclick="{!c.HandleRegistrationPopUp}"></lightning:button>
+                                            <lightning:button class="button_style" variant="brand-outline" label="Instructor Details" 
+                                                             value="{!prop.Class_Instructor__c}" onclick="{!c.HandleInstructorDetailsPopUp}"></lightning:button>
+                                        </lightning:buttonGroup>
+                                    </div>
+                                </lightning:layoutItem>
+                            </lightning:layout>
+                            
+                        </div>
+                    </lightning:layout>
+                </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layout>>
+    <aura:set attribute="else">
+        <span>Class Listing aren't visible yet. </span>
+    </aura:set>
+    </aura:if>
+<!-- Beginning Class  Details Modal Code Block  -->
+<aura:if isTrue="{!v.classDetailsClicked}"> 
+    <div style="margin-top:5%">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" >
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:card title="Class Details" iconName="standard:contact">
+                        <lightning:buttonIcon class="slds-modal__close" iconName="utility:close" 
+                        onclick="{!c.HandleCloseClassDetails}"></lightning:buttonIcon>
+                    </lightning:card>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" >
+                    <c:ClassOverview classId="{!v.classId}"></c:ClassOverview>
+                </div>
+            </div>
+        </section>
+    </div>
+</aura:if>
+<!-- Ending Class Details Modal Code Block  -->
+<!-- Beginning Instructor Details Modal Code Block  -->
+<aura:if isTrue="{!v.instructorDetailsClicked}"> 
+    <div style="margin-top:5%">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" >
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:card title="Instructor Details" iconName="standard:contact">
+                        <lightning:buttonIcon class="slds-modal__close" iconName="utility:close" 
+                        onclick="{!c.HandleCloseInstructorDetails}"></lightning:buttonIcon>
+                    </lightning:card>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" >
+                    <c:ClassInstructor instructorId="{!v.instructorId}"></c:ClassInstructor>
+                </div>
+            </div>
+        </section>
+    </div>
+</aura:if>
+<!-- Ending Instructor Details Modal Code Block  -->
+<!-- Beginning Registration Modal Code Block  -->
+<aura:if isTrue="{!v.registrationBttnClicked}" >
+    <div style="margin-top:5%;">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:button class="slds-modal__close" iconName="utility:close"
+                                      onclick="{!c.HandleCloseRegistrationPopUp}"></lightning:button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <c:ClassRegistration currAccId="{!v.currAccId}" classId="{!v.classId}"></c:ClassRegistration>
+                </div>
+            </div>
+        </section>
+    </div>
+</aura:if>
+<!-- Ending Registration Modal Code Block  -->
+</aura:component>
+
+
