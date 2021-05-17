@@ -31,12 +31,18 @@
                                     <img src="{!$Resource.Swim}"/>
                                 </lightning:layoutItem>
                                 <lightning:layoutItem size="8" padding="around-small">
-                                    <lightning:card title="{!prop.Name}">
+                                    <lightning:card title="{!prop.Name + ': ' + prop.product_nombre__c}">
                                         <lightning:layoutItem size="12">
                                             <p style="color:red">Price: {!prop.Class_Price__c}</p>
                                         </lightning:layoutItem>
                                         <lightning:layoutItem size="12">
-                                            <p>Capacity: {!prop.Capacity__c}</p>
+                                            <p>Day: {!prop.Day__c}</p>
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem size="12">
+                                            <p>Level: {!prop.Level__c}</p>
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem size="12">
+                                            <p>Instructor: {!prop.Instr_nombre__c}</p>
                                         </lightning:layoutItem>
                                     </lightning:card>
                                     <div class="slds-p-top_small"> 

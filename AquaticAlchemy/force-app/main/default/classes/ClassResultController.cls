@@ -11,8 +11,8 @@ public with sharing class ClassResultController {
     @AuraEnabled(cacheable=true) 
     public static List<Class__c> GetAllClasses() {
         List<Class__c> allClassAvailable = new List<Class__c>();
-        allClassAvailable = [SELECT Id, Name, Capacity__c, Class_Price__c, Class_Time__c, Class_Type__c, Day__c, Class_Instructor__C,
-                                    InstructorEmail__C, InstructorName__C, InstructorPhone__C, Level__c, Start_Date__c
+        allClassAvailable = [SELECT Id, product_nombre__c, instr_nombre__c ,Name, Capacity__c, Class_Price__c, Class_Time__c, Class_Type__c, Day__c, Class_Instructor__C,
+                                    InstructorEmail__C, InstructorName__C, InstructorPhone__C, Level__c, Start_Date__c, Product__c
                                 FROM Class__c LIMIT 20
                             ];
         return allClassAvailable;
@@ -27,7 +27,7 @@ public with sharing class ClassResultController {
     public static list<Class__c> GetFilteredClasses(String level, String price, String instructor, String day){
          //Using Dynamic SOQL 
         List<Class__c> filteredClasses = new List<Class__c>();
-        String querySelectClasses = 'SELECT Id, Capacity__c, Name, Class_Image__c, Class_Instructor__c, Class_Price__c,';
+        String querySelectClasses = 'SELECT Id, product_nombre__c, instr_nombre__c, Capacity__c, Name, Class_Image__c, Class_Instructor__c, Class_Price__c,';
         querySelectClasses = querySelectClasses + 'Class_Type__C, Day__c, Class_Time__c, InstructorEmail__c, InstructorName__c,';
         querySelectClasses = querySelectClasses + 'Level__c, Start_Date__c FROM Class__c';
         String queryWhereClause = ' WHERE Class_Instructor__c != NULL';
@@ -49,11 +49,11 @@ public with sharing class ClassResultController {
                 String surf301 = 'Surf 301';
                 String surf401 = 'Surf 401';
                 queryWhereClause = QueryWhereClause + ' AND (Level__C = :rippple301 OR Level__c = :rippple401 OR Level__C = :wave301 OR Level__c = :wave401 OR Level__c = :surf401 OR Level__c = :surf301 )';
-            }else {
+            }else if (level == 'Advanced') {
                 String rippple501 = 'Ripple 501';
                 String wave501 = 'Wave 501';
                 String surf501 = 'Surf 501';
-                queryWhereClause = QueryWhereClause + ' AND (Level__C = :rippple501 OR Level__C = :wave501 OR Level__c = :surf501 OR)';
+                queryWhereClause = QueryWhereClause + ' AND (Level__C = :rippple501 OR Level__C = :wave501 OR Level__c = :surf501)';
 
             }
         }
@@ -61,7 +61,10 @@ public with sharing class ClassResultController {
             queryWhereClause = QueryWhereClause + ' AND Class_Price__c = :price';
         }
          if(String.isNotBlank(instructor) && instructor != 'Any') {
-            queryWhereClause = QueryWhereClause + ' AND Class_Instructor__c = :instructor';
+             System.debug('checking instruct name '+ instructor);
+             Class_Instructor__c instr = [SELECT Id FROM Class_Instructor__c WHERE Name=:instructor];
+             Id profId = instr.Id;
+            queryWhereClause = QueryWhereClause + ' AND Class_Instructor__c = :profId';
         }
          if(String.isNotBlank(day) && day != 'Any') {
             queryWhereClause = QueryWhereClause + ' AND Day__c = :day';
