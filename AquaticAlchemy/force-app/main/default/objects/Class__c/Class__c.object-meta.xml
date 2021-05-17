@@ -163,13 +163,14 @@
     <pluralLabel>Classes</pluralLabel>
     <searchLayouts>
         <searchResultsAdditionalFields>Capacity__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Class_Image__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Class_Price__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Class_Time__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Class_Type__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Day__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Instructor__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>InstructorEmail__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Class_Instructor__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Instr_nombre__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>product_nombre__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
