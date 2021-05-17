@@ -1,0 +1,45 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: CampSchedule.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/14/21
+// Updated: 05/14/21
+// Description: Component that helps display information regarding a Summer Camp event.
+//
+// The schedule attribute holds information on the specific camp event being passed in, such as the start and end date,
+// the amount of kids that will be admitted, and the difficulty of the camp.
+//
+// The daySchedules attribute helps display information regarding the specific days of the week
+// during which the camp will take place (Mon. - Fri. typically.).
+//
+// The init handler helps initialize day specific information for the current Summer Camp event being display.
+//
+///////////////////////////////////////////////////////////////
+-->
+
+<aura:component controller="AccordionAuraController" >
+    <aura:handler name="init" value="{!this}" action="c.doInit"/>
+    <aura:attribute name="schedule" type="Public_Event__c"/>
+    <aura:attribute name="daySchedules" type="Camp_Day__c[]"/>
+    
+    <div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_2-of-3" >
+                <h3>{!v.schedule.Name}</h3>
+                <p style="padding: 0px;">{!v.schedule.StartDateString__c} - {!v.schedule.EndDateString__c}</p>
+                <p>{!v.schedule.Description__c}</p>
+            </div>
+            
+            <div class="slds-col slds-size_1-of-3">
+                <p>Camp Size: {!v.schedule.Camp_Size__c}</p>
+                <p>Age Group: {!v.schedule.Age_Group__c}</p>
+                <p>Swim Level: {!v.schedule.Swim_Level__c}</p>            
+            </div>
+        </div>
+        
+        <aura:iteration items="{!v.daySchedules}" var="daySchedule">
+            <c:CampDaySchedule campDay="{!daySchedule}"/>  
+        </aura:iteration>
+    </div>
+</aura:component>

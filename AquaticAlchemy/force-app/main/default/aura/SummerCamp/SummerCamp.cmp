@@ -1,0 +1,29 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: SummerCamp.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/13/21
+// Updated: 05/15/21
+// Description: Page component that will display all summer camp related components on the One Page Application component.
+//
+///////////////////////////////////////////////////////////////
+-->
+
+<aura:component>
+    
+    <div class="slds-grid">
+    
+    	<div class="slds-col slds-size_2-of-3">
+            <c:SummerCampDetails/>
+        </div>
+        
+        <div class="slds-col slds-size_1-of-3">
+                <c:SummerCampCarousel/>
+                <div style="margin-top:50px;">
+                    <c:SummerCampRegistration/>
+                </div>
+        </div>
+    </div>
+	
+</aura:component>

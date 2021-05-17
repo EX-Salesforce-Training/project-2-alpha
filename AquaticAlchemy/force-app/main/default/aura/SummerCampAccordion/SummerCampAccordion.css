@@ -1,0 +1,29 @@
+/*
+///////////////////////////////////////////////////////////////
+//
+// Name: SummerCampAccordion.css
+// Author: David Serrano, Salesforce Developer
+// Created: 05/13/21
+// Updated: 05/14/21
+// Description: CSS style sheet to style accodrion component.
+//
+///////////////////////////////////////////////////////////////
+*/
+
+.THIS p{
+    color: white!important;
+}
+
+.THIS .slds-accordion__content{
+    background: #102151;
+    border-radius: 5px;
+    margin:-12px;
+}
+
+.THIS .slds-accordion__summary-action{
+    background: #3374dd;
+}
+
+.THIS .slds-truncate{
+    font-size: 1.5em;
+}

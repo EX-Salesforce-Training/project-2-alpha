@@ -1,0 +1,39 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: SummerCampCarousel.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/13/21
+// Updated: 05/13/21
+// Description: Carousel component to display static resources images. Caption and descriptions are hardcoded.
+//
+/////////////////////////////////////////////////////////////// 
+-->
+
+<aura:component >
+    <div>
+        <lightning:carousel disableAutoRefresh="false" disableAutoScroll="false">
+            <lightning:carouselImage
+                                     src = "/resource/jumping2"
+                                     header = "Fun in the sun!"
+                                     description = "Little alchemists can displace liquids"
+                                     alternativeText = ""
+                                     href = "https://www.salesforce.com">
+            </lightning:carouselImage>
+            <lightning:carouselImage
+                                     src = "/resource/bbq2"
+                                     header = "You're invited to the BBQ!"
+                                     description = "Delicious food, fun games, and upbeat music!"
+                                     alternativeText = "Third card accessible description."
+                                     href = "https://www.salesforce.com">
+            </lightning:carouselImage>
+            <lightning:carouselImage
+                                     src = "/resource/poolparty2"
+                                     header = "Pool Parties"
+                                     description = "Celebrations to commerate the end of the camp"
+                                     alternativeText = "First card accessible description."
+                                     href = "https://www.salesforce.com">
+            </lightning:carouselImage>
+        </lightning:carousel>
+    </div>
+</aura:component>

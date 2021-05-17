@@ -1,0 +1,35 @@
+/*
+///////////////////////////////////////////////////////////////
+//
+// Name: FAQ.css
+// Author: David Serrano, Salesforce Developer
+// Created: 05/13/21
+// Updated: 05/13/21
+// Description: CSS style sheet to style the Frequently Asked Questions display.
+//
+/////////////////////////////////////////////////////////////// 
+*/
+.THIS {
+    color: white;
+	padding: 15px 40px 15px 40px;
+    text-align: left;
+	vertical-align: center;
+}
+
+.THIS p{
+    font-size: 1.2em!important;
+    font-weight: bold;
+}
+
+.THIS #answer{
+    padding-bottom: 25px;
+    padding-left: 20px;;
+}
+
+.THIS #line{
+    background: white;
+    height: 1px;
+    margin: auto;
+    opacity: .5;
+    width: 100%;
+}

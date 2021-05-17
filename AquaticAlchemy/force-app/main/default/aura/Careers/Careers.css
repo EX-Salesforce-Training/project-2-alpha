@@ -1,0 +1,33 @@
+/*
+///////////////////////////////////////////////////////////////
+//
+// Name: Careers.css
+// Author: David Serrano, Salesforce Developer
+// Created: 05/8/21
+// Updated: 05/15/21
+// Description: CSS Style sheet to help style the Carreer Component.
+//
+///////////////////////////////////////////////////////////////
+*/
+
+.THIS {
+    background: #102151!important;
+    border-radius: 5px;
+    height: 70vh;
+    margin: 0px 25px 0px 25px;
+    margin-bottom: 300px;
+    opacity: .9;
+    padding: 40px;
+}
+
+.THIS h1{
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+}
+
+.THIS p{
+    color: white;
+    font-size: 1.4em;
+    padding-top: 10px;
+}

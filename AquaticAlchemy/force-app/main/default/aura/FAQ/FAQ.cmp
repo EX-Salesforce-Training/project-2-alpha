@@ -1,0 +1,28 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: FAQ.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/13/21
+// Updated: 05/13/21
+// Description: Component to help display Frequently Asked Questions. This data is passed in from Knowledge Article objects.
+//
+/////////////////////////////////////////////////////////////// 
+-->
+
+<aura:component >
+    <aura:attribute name="question" type="String"/>
+    <aura:attribute name="answer" type="String"/>
+    
+    <div>
+        <p>{!v.question}</p>
+        <br/>
+        <div id="answer">
+             <li>- {!v.answer}</li>
+        </div>
+        
+        <div id="line"></div>
+    </div>
+    
+    
+</aura:component>

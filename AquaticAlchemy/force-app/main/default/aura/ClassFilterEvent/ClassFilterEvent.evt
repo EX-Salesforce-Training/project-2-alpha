@@ -1,0 +1,6 @@
+<aura:event type="Component" description="Event template">
+    <aura:attribute name="levelFilter" type="string"></aura:attribute>
+    <aura:attribute name="priceFilter" type="string"></aura:attribute>
+    <aura:attribute name="instructorFilter" type="string"></aura:attribute>
+    <aura:attribute name="dayFilter" type="string"></aura:attribute>
+</aura:event>

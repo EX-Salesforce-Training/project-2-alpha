@@ -1,0 +1,36 @@
+/*
+///////////////////////////////////////////////////////////////
+//
+// Name: CampDaySchedule.css
+// Author: David Serrano, Salesforce Developer
+// Created: 05/14/21
+// Updated: 05/14/21
+// Description: CSS stylesheet to provide styling for the Camp Day Schedule item.
+//
+///////////////////////////////////////////////////////////////
+*/
+
+.THIS {
+    border: 1px solid white;
+    border-radius: 5px;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    padding:5px!important;
+	text-align: left;
+    vertical-align: top;
+}
+
+.THIS h4{
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.THIS span{
+    color: white;
+    font-size: .9em;
+}

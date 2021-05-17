@@ -1,0 +1,35 @@
+/*
+///////////////////////////////////////////////////////////////
+//
+// Name: CampSchedule.css
+// Author: David Serrano, Salesforce Developer
+// Created: 05/14/21
+// Updated: 05/14/21
+// Description: CSS style sheet for the Camp Schedule.
+//
+///////////////////////////////////////////////////////////////
+*/
+
+.THIS{
+    border-bottom: 1px solid white;
+    padding: 15px 40px 15px 40px;
+}
+
+.THIS h3{
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.THIS p{
+    color: white;
+    font-size: 1em!important;
+}
+
+.THIS .slds-size_2-of-3{
+    text-align: left;
+}
+
+.THIS .slds-size_1-of-3{
+    text-align: right;
+}

@@ -1,0 +1,56 @@
+<!--
+///////////////////////////////////////////////////////////////
+//
+// Name: OnePageApplication.cmp
+// Author: David Serrano, Salesforce Developer
+// Created: 05/8/21
+// Updated: 05/15/21
+// Description: Component that can be drag and dropped into an experience site or lightning experience page.
+// Helps display different component 'pages' to have a one page application. 
+// Each attribute boolean corresponds to the different component pages that can exist.
+// The boolean also helps determine which component to display at any given time.
+//
+///////////////////////////////////////////////////////////////
+-->
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="homePage" type="Boolean" default="true"/>
+    <aura:attribute name="campPage" type="Boolean" default="false"/>
+    <aura:attribute name="accountPage" type="Boolean" default="false"/>
+    <aura:attribute name="careerPage" type="Boolean" default="false"/>
+    <aura:attribute name="classesPage" type="Boolean" default="false"/>
+    
+    <div id="navBar">
+        <lightning:buttonGroup class="navBar">
+            <lightning:button label="Home" variant="brand" onclick="{!c.btnClicked}"/>
+         	<lightning:button label="Summer Camp" variant="brand" onclick="{!c.btnClicked}"/>
+            <lightning:button label="Classes" variant="brand" onclick="{!c.btnClicked}"/>
+            <lightning:button label="Careers" variant="brand" onclick="{!c.btnClicked}"/>
+            <lightning:button label="Account" variant="brand" onclick="{!c.btnClicked}"/>
+        </lightning:buttonGroup>
+    </div>
+    
+    <div class="view">
+        <aura:if isTrue="{!v.homePage}">
+            <c:SummerCamp/>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.campPage}">   
+            <c:SummerCamp/>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.accountPage}">
+            <div style="">account page</div>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.classesPage}">
+            <c:ClassResult/>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.careerPage}">
+            <div style="padding-top:40px;">
+                <c:Careers/>
+            </div>
+        </aura:if>
+        
+    </div>
+</aura:component>

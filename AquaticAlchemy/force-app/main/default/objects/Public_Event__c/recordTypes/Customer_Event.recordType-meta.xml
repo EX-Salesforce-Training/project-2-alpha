@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Event</fullName>
+    <active>true</active>
+    <label>Customer Event</label>
+    <picklistValues>
+        <picklist>Age_Group__c</picklist>
+        <values>
+            <fullName>10-13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14-17</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5-10</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject__c</picklist>
+        <values>
+            <fullName>Aquatic Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Birthday Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Swim Meet</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Swim_Level__c</picklist>
+        <values>
+            <fullName>Beginner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intermediate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moderate</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
