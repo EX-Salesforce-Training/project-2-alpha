@@ -4,7 +4,7 @@
         <lightning:layout>
             <div class="slds-box slds-grid slds-wrap slds-p-around_small">
                 <div class="slds-col" style="margin-top:2%; width:10%;">
-                    <img src="{!$Resource.joe_golberg}"/>
+                    <img src="{!$Resource.Swim}"/>
                     <!-- 
                     <lightning:outputField fieldName="Instructor_Photo__c" variant="label-hidden"></lightning:outputField>
                     -->

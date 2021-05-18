@@ -18,7 +18,7 @@
     <aura:attribute name="currAccId" type="string"></aura:attribute>
     
     <!-- Display filter -->
-    <div>
+    
         
             <c:ClassFilter/>
 
@@ -124,6 +124,6 @@
         </section>
     </div>
 </aura:if>
-</div>
+
 <!-- Ending Registration Modal Code Block  -->
 </aura:component>

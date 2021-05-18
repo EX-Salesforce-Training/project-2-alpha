@@ -1,13 +1,14 @@
 /*    Name: ClassResultController 
  //    Author: Andreology
  //    Created: 05/08/2021
- //    Updated: 05/08/2021
+ //    Updated: 05/17/2021
  //    Description: server-side Controller class for ClassDetail Lightning Component which will be on Class Listing Page. 
 */
 public with sharing class ClassResultController {
     public ClassResultController() {
 
     }
+    //method to retrieve all current classes with instructors and that are in draft status  inside DB
     @AuraEnabled(cacheable=true) 
     public static List<Class__c> GetAllClasses() {
         List<Class__c> allClassAvailable = new List<Class__c>();
@@ -17,12 +18,14 @@ public with sharing class ClassResultController {
                             ];
         return allClassAvailable;
     }
+    //method to get current account id 
     @AuraEnabled(cacheable=true)
     public static String GetAccountId() {
          Id userId = UserInfo.getUserId();
         Account userAcct = [SELECT Id, OwnerId FROM Account WHERE OwnerId=:userId LIMIT 1];
         return '' + userAcct.Id;
     }
+    //method to retrieve filtered list of classes based on user input
     @AuraEnabled(cacheable=true)
     public static list<Class__c> GetFilteredClasses(String level, String price, String instructor, String day){
          //Using Dynamic SOQL 
@@ -31,7 +34,7 @@ public with sharing class ClassResultController {
         querySelectClasses = querySelectClasses + 'Class_Type__C, Day__c, Class_Time__c, InstructorEmail__c, InstructorName__c,';
         querySelectClasses = querySelectClasses + 'Level__c, Start_Date__c FROM Class__c';
         String queryWhereClause =  ' WHERE Class_Instructor__c != NULL AND isSummerCamp__c=false';
-        
+        //check if input was provided
         if(String.isNotBlank(level) && level != 'Any') {
             if(level == 'Beginner') {
                 String intro = 'Intro to Splash';
@@ -69,6 +72,7 @@ public with sharing class ClassResultController {
          if(String.isNotBlank(day) && day != 'Any') {
             queryWhereClause = QueryWhereClause + ' AND Day__c = :day';
         }
+        //dynamic soql to query based on filter criteria
         querySelectClasses = querySelectClasses + QueryWhereClause;
         filteredClasses = Database.query(querySelectClasses);
         return filteredClasses;
