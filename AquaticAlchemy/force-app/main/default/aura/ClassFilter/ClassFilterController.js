@@ -32,10 +32,6 @@
     handleFilterOptionSelected : function(component, event, helper) {
       
         let filter_event = component.getEvent('registeredFilterEvent');
-        console.log("CHECKING LEVEL "  + component.get('v.levelSelected'));
-        console.log("CHECKING PRICE "  + component.get("v.priceSelected"));
-        console.log("CHECKING INSTR "  + component.get("v.instructorSelected"));
-        console.log("CHECKING DAY "  + component.get("v.daySelected"));
         filter_event.setParams({
             "levelFilter": component.get("v.levelSelected"),
             "priceFilter":component.get("v.priceSelected"),

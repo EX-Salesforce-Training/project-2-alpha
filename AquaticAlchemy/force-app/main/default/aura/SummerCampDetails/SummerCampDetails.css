@@ -28,10 +28,12 @@
     color: #102151;
     font-size: 2em;
     font-weight: bold;
+    opacity: .9;
 }
 
 .THIS p{
     color: #102151;
     font-size: 1.4em;
     padding-top: 10px;
+    
 }

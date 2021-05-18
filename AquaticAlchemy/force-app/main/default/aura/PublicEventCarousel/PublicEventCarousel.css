@@ -1,2 +1,6 @@
-.THIS .img {
+.THIS .slds-carousel__content{
+    background: #102151;
+    opacity: .9;
+    color: white!important;
 }
+

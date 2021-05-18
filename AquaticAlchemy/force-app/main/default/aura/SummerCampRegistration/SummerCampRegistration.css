@@ -6,3 +6,17 @@
     font-size: 2em;
     font-weight: bold;
 }
+
+
+.THIS .slds-button{
+    background: white;
+    color: #102151;
+    border: 1px transparent solid;
+    opacity: .9;
+}
+
+.THIS .slds-button:hover{
+    background: transparent;
+    color: white;
+    border: 1px white solid;
+}

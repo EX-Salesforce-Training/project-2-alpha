@@ -25,21 +25,28 @@
             <aura:iteration items="{!v.classListing}" var="prop">
                 <lightning:layoutItem padding="around-small" size="6">
                     <lightning:layout multipleRows="true">
-                        <div class="slds-box"  style="width:100%;background-color:white;">
+                       <!-- <div class="slds-box"  style="width:100%;background-color:white;">-->
+                        <div class="slds-box"  style="width:100%;background-color:#102151;opacity:.9;">
                             <lightning:layout>
                                 <lightning:layoutItem size="4" padding="around-small">
                                     <img src="{!$Resource.Swim}"/>
                                 </lightning:layoutItem>
                                 <lightning:layoutItem size="8" padding="around-small">
-                                    <lightning:card title="{!prop.Name}">
+                                    <lightning:card title="{!prop.Name + ': ' + prop.product_nombre__c}">
                                         <lightning:layoutItem size="12">
                                             <p style="color:red">Price: {!prop.Class_Price__c}</p>
                                         </lightning:layoutItem>
                                         <lightning:layoutItem size="12">
-                                            <p>Capacity: {!prop.Capacity__c}</p>
+                                            <p>Day: {!prop.Day__c}</p>
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem size="12">
+                                            <p>Level: {!prop.Level__c}</p>
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem size="12">
+                                            <p>Instructor: {!prop.Instr_nombre__c}</p>
                                         </lightning:layoutItem>
                                     </lightning:card>
-                                    <div class="slds-p-top_small"> 
+                                    <div > 
                                         <lightning:buttonGroup>
                                             <lightning:button class="button_style" variant="brand-outline" label="Class Overview" 
                                                              value="{!prop.Id}" onclick="{!c.HandleClassDetailsPopUp}"></lightning:button>

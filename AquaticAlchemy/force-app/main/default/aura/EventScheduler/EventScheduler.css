@@ -1,8 +1,8 @@
 .THIS {
-    height: 70vh;
+    height: 100vh;
     padding: 40px;
     display: block;
-    margin-bottom: 300px;
+    border-radius: 5px;
 }
 
 .THIS .slds-grid{

@@ -1,8 +1,16 @@
 .THIS  {
-    background-color: #16355F;
-    border-style: solid;
-    border-color: #FFFFFF;
+    background-color: #102151;
+    border: white 1px solid;
+    margin-top: 10px;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    height: 420px;
+    opacity: .9!important;
+}
 
+.THIS .list{
+    opacity: .9!important;
 }
 
 .THIS .field > *{
@@ -12,4 +20,20 @@
 
 .THIS .slds-form-element__static{
     color:white;
+}
+
+.THIS .slds-button_neutral:hover {
+    padding-left: var(--sds-c-button-neutral-spacing-inline-start, var(--lwc-spacingMedium,1rem));
+    padding-right: var(--sds-c-button-neutral-spacing-inline-end, var(--lwc-spacingMedium,1rem));
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    transition: border .15s linear;
+    background-color: transparent;
+    border-color: var(--sds-c-button-neutral-color-border, var(--lwc-buttonColorBorderPrimary,rgb(212, 212, 212)));
+    color: white;
+}
+
+.THIS .slds-button{
+    margin-top: 15px;
 }

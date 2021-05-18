@@ -1,6 +1,6 @@
 <aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
-    <aura:attribute name="classId" type="string"></aura:attribute>
-    <aura:attribute name="currAccId" type="string"></aura:attribute>
+    <aura:attribute name="classId" type="string" default="a025e000001QqzdAAC"></aura:attribute>
+    <aura:attribute name="currAccId" type="string" default="0015e000005NCiKAAW"></aura:attribute>
 
     <lightning:card title="Register Today!" >
              <div class="slds-p-around_small">

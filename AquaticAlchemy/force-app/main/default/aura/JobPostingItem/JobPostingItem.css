@@ -18,3 +18,16 @@
     padding: 5px;
     vertical-align: middle;
 }
+
+
+.THIS .slds-button_neutral:hover {
+    padding-left: var(--sds-c-button-neutral-spacing-inline-start, var(--lwc-spacingMedium,1rem));
+    padding-right: var(--sds-c-button-neutral-spacing-inline-end, var(--lwc-spacingMedium,1rem));
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    transition: border .15s linear;
+    background-color: transparent;
+    border-color: var(--sds-c-button-neutral-color-border, var(--lwc-buttonColorBorderPrimary,rgb(212, 212, 212)));
+    color: white;
+}

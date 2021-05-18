@@ -1,12 +1,12 @@
 .THIS {
     display: block;
     margin-top: 400px;
+    opacity: .9px;
 }
 
 .THIS .form {
-    background-color: #16355F;
-    border-style: solid;
-    border-color: #FFFFFF;
+    background-color: #102151;
+    border: white 1px solid;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 10px;
@@ -14,7 +14,8 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-   
+    border-radius: 5px;
+    opacity: .9!important;
 }
 
 .THIS .label {
@@ -22,11 +23,17 @@
 }
 
 .THIS .btn{
-    color: #FFFFFF;
-    background-color: #304C74;
     margin-top: 25px;
 }
 
-.THIS .btn:hover{
-    background-color: white!important;
+.THIS .slds-button:hover {
+    padding-left: var(--sds-c-button-neutral-spacing-inline-start, var(--lwc-spacingMedium,1rem));
+    padding-right: var(--sds-c-button-neutral-spacing-inline-end, var(--lwc-spacingMedium,1rem));
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    transition: border .15s linear;
+    background-color: transparent;
+    border-color: var(--sds-c-button-neutral-color-border, var(--lwc-buttonColorBorderPrimary,rgb(212, 212, 212)));
+    color: white;
 }

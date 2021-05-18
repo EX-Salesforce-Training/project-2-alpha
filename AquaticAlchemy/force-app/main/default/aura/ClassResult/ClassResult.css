@@ -1,14 +1,74 @@
 .THIS {
-    height: 70vh;
-    margin-bottom: 300px;
+    height: 100vh;
     padding-top: 40px;
+}
+
+.THIS p{
+    padding-left: 15px;
 }
 
 .THIS .button_style{
     margin: 7px;
+    font-size: .8em;
 }
 
 .THIS .slds-button-group{
     background: none!important;
-    margin-left: auto!important;
+    margin: auto!important;
+    position: initial!important;
+    width:auto!important;
 }
+
+.THIS .slds-button{
+    border-radius: 5px;
+}
+
+.THIS .slds-button:hover{
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid white;
+}
+
+.THIS .slds-button:first-child{
+    border-radius: 5px;
+}
+
+.THIS .slds-button:first-child:hover{
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid white;
+}
+
+.THIS .slds-button:last-child{
+    border-radius: 5px;
+}
+
+.THIS .slds-button:last-child:hover{
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid white;
+}
+
+.THIS .slds-card{
+    background:transparent!important;
+    color:  #fff;
+}
+
+
+.THIS .slds-card:hover{
+    background:transparent!important;
+    border: 1px  #fff solid;
+    opacity: .9;
+}
+
+/*
+.THIS .slds-card{
+    background: #fff!important;
+    color: black;
+}
+
+
+.THIS .slds-card:hover{
+    background: #fff!important;
+    color: black;
+}*/
