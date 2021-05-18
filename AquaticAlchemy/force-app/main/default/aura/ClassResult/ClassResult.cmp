@@ -19,7 +19,9 @@
     
     <!-- Display filter -->
     <div>
-    <c:ClassFilter></c:ClassFilter>
+        
+            <c:ClassFilter/>
+
     <aura:if isTrue="{!v.classesAvailable}">
         <lightning:layout multipleRows="true"> 
             <aura:iteration items="{!v.classListing}" var="prop">
@@ -125,5 +127,3 @@
 </div>
 <!-- Ending Registration Modal Code Block  -->
 </aura:component>
-
-

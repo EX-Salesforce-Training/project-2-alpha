@@ -17,7 +17,8 @@
                                     fieldLevelHelp="Find Level of Difficulty"
                                     variant="label-stacked" value="{!v.levelSelected}"
                                     options="{!v.classLevels}" 
-                                    onchange="{!c.handleFilterOptionSelected}">
+                                    onchange="{!c.handleFilterOptionSelected}"
+                                    dropdownAlignment="auto">
                 </lightning:combobox>
             </div>
         </lightning:layoutItem>

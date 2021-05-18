@@ -8,10 +8,9 @@
             <div class="slds-col slds-size_1-of-2">
                 <c:EventsFilter/>
             </div>
-            
         </div>
 
-        <div>
+        <div >
             <c:NewEvent/>
         </div>
     </div>

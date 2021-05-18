@@ -1,5 +1,4 @@
 <aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
-
     <div>    
     <lightning:recordEditForm objectApiName="Public_Event__c" onsuccess="{!c.ClearFields}">
         <div class="form">

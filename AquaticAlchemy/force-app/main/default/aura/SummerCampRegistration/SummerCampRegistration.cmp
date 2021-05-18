@@ -11,7 +11,7 @@
                     <lightning:inputField fieldName="Name" variant="label-stacked" ></lightning:inputField>
                     <lightning:inputField fieldName="Date_Registered__c" variant="label-stacked" ></lightning:inputField>
                     <lightning:inputField fieldName="Email__c" variant="label-stacked" ></lightning:inputField>
-                    <lightning:button type="submit" name="register" label="Register" variant="brand" 
+                    <lightning:button type="submit" name="register" label="Register"  
                                       class="slds-m-top_small"></lightning:button>
                  </lightning:recordEditForm>
                 </div>

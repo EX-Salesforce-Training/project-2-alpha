@@ -61,14 +61,43 @@
     opacity: .9;
 }
 
-/*
-.THIS .slds-card{
-    background: #fff!important;
-    color: black;
+.THIS .slds-modal__container{
+	margin-top: 5%;
 }
 
+.THIS h1{
+    color: white;
+}
 
-.THIS .slds-card:hover{
-    background: #fff!important;
-    color: black;
-}*/
+.THIS p{
+    color: white;
+    padding-top: 10px;
+}
+
+.THIS .slds-modal__header{
+    background: #78CCFD!important; 
+    color: white!important; 
+}
+
+.THIS .slds-modal__content{
+    background: #78CCFD!important;
+}
+
+.THIS .slds-modal__footer{
+    background: #78CCFD!important;
+}
+
+.THIS .appText{
+    color: white!important;
+}
+
+.THIS .slds-box{
+    color: white!important;
+}
+
+.THIS .slds-form-element__static{
+    color: white;
+}
+
+.THIS .slds-truncate{}
+

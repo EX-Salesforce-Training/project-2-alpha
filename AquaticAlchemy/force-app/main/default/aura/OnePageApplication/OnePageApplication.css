@@ -17,17 +17,11 @@
 	margin-top: -20px;
     padding-left: 5vh;
 	position: fixed;
-    z-index: 99;
+
 }
 
 .THIS .view{
-    background: red;
     margin-top: 30px;
 }
 
 
-.THIS .slds-card{
-    color: white;
-    background: #3374dd!important;
-    opacity: .9;
-}
