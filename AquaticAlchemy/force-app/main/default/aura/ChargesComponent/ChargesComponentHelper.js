@@ -18,6 +18,7 @@
         component.set("v.checkifTrue", falsesmap);
     },
     deleteButton : function(component, event, helper) {
+        console.log("deleteButton");
         let method = component.get("c.updateCharges");
         let trueFalseMap = component.get("v.checkifTrue");
         function getTrues() {
@@ -41,6 +42,7 @@
                     // after data is updated
                     $A.get('e.force:refreshView').fire();
                 } else {
+                    console.log("error here");
                      // Handle the 'ERROR' or 'INCOMPLETE' state
                 }
             }
@@ -83,7 +85,9 @@
                                    // Refresh the view
                                    // after data is updated
                                    $A.get('e.force:refreshView').fire();
-                               } 
+                               } else {
+                                   console.log("submit error");
+                               }
                            }
                           );
         $A.enqueueAction(method);

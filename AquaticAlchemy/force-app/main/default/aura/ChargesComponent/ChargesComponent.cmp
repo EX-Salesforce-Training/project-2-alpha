@@ -6,12 +6,17 @@
     <aura:attribute name="checkifTrue" type="Map" />
     <aura:attribute name="order" type="Order[]"/>
     <aura:handler name="checkboxEvent" event="c:Checked" action="{!c.handleComponentEvent}"/>
+
     <aura:if isTrue="{!v.nothingInList}">
         <lightning:card title="Nothing in Your Cart!"/>
         <aura:set attribute="else">
-            <aura:iteration items="{!v.orderProductList}" var="orderProduct">
-                <c:ChargeCard product="{!orderProduct.Product2Id}" orderProduct="{!orderProduct.Id}" />
-            </aura:iteration>   
+            <div class="slds-grid slds-wrap">
+                <aura:iteration items="{!v.orderProductList}" var="orderProduct">
+                    <div class="slds-col slds-size_1-of-3">
+                    <c:ChargeCard product="{!orderProduct.Product2Id}" orderProduct="{!orderProduct.Id}" />
+                    </div>
+                </aura:iteration>  
+            </div> 
             <aura:if isTrue="{!v.allFalse}">
                 <lightning:button label="Submit" title="Submit Button" onclick="{!c.handleSubmit}"/>
                 <aura:set attribute="else">
@@ -20,5 +25,5 @@
             </aura:if>
         </aura:set>
     </aura:if>
-    
+
 </aura:component>

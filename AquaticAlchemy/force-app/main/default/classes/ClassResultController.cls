@@ -13,7 +13,7 @@ public with sharing class ClassResultController {
         List<Class__c> allClassAvailable = new List<Class__c>();
         allClassAvailable = [SELECT Id, product_nombre__c, instr_nombre__c ,Name, Capacity__c, Class_Price__c, Class_Time__c, Class_Type__c, Day__c, Class_Instructor__C,
                                     InstructorEmail__C, InstructorName__C, InstructorPhone__C, Level__c, Start_Date__c, Product__c
-                                FROM Class__c LIMIT 20
+                                FROM Class__c WHERE Class_Instructor__c != NULL AND isSummerCamp__c=false LIMIT 20
                             ];
         return allClassAvailable;
     }
@@ -27,10 +27,10 @@ public with sharing class ClassResultController {
     public static list<Class__c> GetFilteredClasses(String level, String price, String instructor, String day){
          //Using Dynamic SOQL 
         List<Class__c> filteredClasses = new List<Class__c>();
-        String querySelectClasses = 'SELECT Id, product_nombre__c, instr_nombre__c, Capacity__c, Name, Class_Image__c, Class_Instructor__c, Class_Price__c,';
+        String querySelectClasses = 'SELECT Id, isSummerCamp__c, product_nombre__c, instr_nombre__c, Capacity__c, Name, Class_Image__c, Class_Instructor__c, Class_Price__c,';
         querySelectClasses = querySelectClasses + 'Class_Type__C, Day__c, Class_Time__c, InstructorEmail__c, InstructorName__c,';
         querySelectClasses = querySelectClasses + 'Level__c, Start_Date__c FROM Class__c';
-        String queryWhereClause = ' WHERE Class_Instructor__c != NULL';
+        String queryWhereClause =  ' WHERE Class_Instructor__c != NULL AND isSummerCamp__c=false';
         
         if(String.isNotBlank(level) && level != 'Any') {
             if(level == 'Beginner') {
@@ -71,7 +71,6 @@ public with sharing class ClassResultController {
         }
         querySelectClasses = querySelectClasses + QueryWhereClause;
         filteredClasses = Database.query(querySelectClasses);
-        System.debug('checking list '+ filteredClasses);
         return filteredClasses;
                                
     }

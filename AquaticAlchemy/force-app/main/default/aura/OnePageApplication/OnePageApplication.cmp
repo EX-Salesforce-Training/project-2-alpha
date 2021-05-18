@@ -18,6 +18,7 @@
     <aura:attribute name="accountPage" type="Boolean" default="false"/>
     <aura:attribute name="careerPage" type="Boolean" default="false"/>
     <aura:attribute name="classesPage" type="Boolean" default="false"/>
+    <aura:attribute name="ordersPage" type="Boolean" default="false"/>
     
     <div id="navBar">
         <lightning:buttonGroup class="navBar">
@@ -26,6 +27,7 @@
             <lightning:button label="Classes" variant="brand" onclick="{!c.btnClicked}"/>
             <lightning:button label="Careers" variant="brand" onclick="{!c.btnClicked}"/>
             <lightning:button label="Account" variant="brand" onclick="{!c.btnClicked}"/>
+            <lightning:button label="Orders" variant="brand" onclick="{!c.btnClicked}"/>
         </lightning:buttonGroup>
     </div>
     
@@ -51,6 +53,11 @@
                 <c:Careers/>
             </div>
         </aura:if>
-        
+
+        <aura:if isTrue="{!v.ordersPage}">
+            <div style="padding-top:40px;">
+                <c:ListOrderItems/>
+            </div>
+        </aura:if>
     </div>
 </aura:component>

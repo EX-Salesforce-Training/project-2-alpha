@@ -9,6 +9,7 @@
         helper.updateSelected(component, event);
     },
     handleDelete : function(component, event ,helper){
+        console.log("handleDelete");
         helper.deleteButton(component);
     }
     
