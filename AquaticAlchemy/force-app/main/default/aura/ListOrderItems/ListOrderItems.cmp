@@ -1,11 +1,7 @@
-<aura:component controller="ApexGetOrderItems" access="global">
+<aura:component controller="ApexGetOrderItems" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.getOrderItems}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getOrders}"/>
     <aura:attribute name="items" type="OrderItem[]"/>
-    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
-    <aura:iteration items="{!v.items}" var="item">
-    	<lightning:recordViewForm recordId="{!item.Id}" objectApiName="OrderItem">
-                <lightning:outputField fieldName="Product2Id" class="field"/>
-   		</lightning:recordViewForm>
-	</aura:iteration>
-             
-	
+    <aura:attribute name="orders" type="Order[]"/>
+    <c:ChargesComponent orderProductList="{!v.items}" order="{!v.orders}"/>           
 </aura:component>

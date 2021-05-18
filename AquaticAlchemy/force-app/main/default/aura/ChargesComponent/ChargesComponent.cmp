@@ -1,15 +1,24 @@
 <aura:component controller="ChargesController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
-    <aura:handler name="init" action="{!c.getChargesList}" value="{!this}" />
-    <aura:attribute name="myBool" type="Boolean" default="true"/>  
-    <aura:attribute name="chargesList" type="Charge__c[]" />
+    <aura:handler name="change" value="{!v.orderProductList}" action="{!c.getChargesList}"/>  
+    <aura:attribute name="orderProductList" type="OrderItem[]" />
+    <aura:attribute name="allFalse" type="Boolean" default="true"/>
+    <aura:attribute name="nothingInList" type="Boolean" default="false"/>
     <aura:attribute name="checkifTrue" type="Map" />
-    <aura:attribute name="accountID" type="String" default ="0015e0000052xLqAAI"/>
-    <aura:attribute name="charge" type="Id"/>
-    <aura:iteration items="{!v.chargesList}" var="charge">
-        <c:ChargeCard chargeName="{!charge.Name}" chargeAmount="{!charge.Amount__c}" chargeID="{!charge.Id}" />
-    </aura:iteration>
+    <aura:attribute name="order" type="Order[]"/>
     <aura:handler name="checkboxEvent" event="c:Checked" action="{!c.handleComponentEvent}"/>
-    <lightning:button label="Submit" title="Submit Button" onclick="{! c.handleClick }"/>
-    
+    <aura:if isTrue="{!v.nothingInList}">
+        <lightning:card title="Nothing in Your Cart!"/>
+        <aura:set attribute="else">
+            <aura:iteration items="{!v.orderProductList}" var="orderProduct">
+                <c:ChargeCard product="{!orderProduct.Product2Id}" orderProduct="{!orderProduct.Id}" />
+            </aura:iteration>   
+            <aura:if isTrue="{!v.allFalse}">
+                <lightning:button label="Submit" title="Submit Button" onclick="{!c.handleSubmit}"/>
+                <aura:set attribute="else">
+                    <lightning:button label="Delete Records" title="Delete Button" onclick="{! c.handleDelete }"/>
+                </aura:set>
+            </aura:if>
+        </aura:set>
+    </aura:if>
     
 </aura:component>
