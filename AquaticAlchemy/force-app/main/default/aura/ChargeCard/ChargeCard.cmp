@@ -1,0 +1,21 @@
+<aura:component >
+    <aura:attribute name="product" type="String"  />
+    <aura:attribute name="orderProduct" type="String"/>
+    <aura:registerEvent name="checkboxEvent" type="c:Checked"/>
+    <lightning:card variant="Narrow" title="Class">
+        <aura:set attribute="actions">
+            <ui:inputCheckbox aura:id="checkbox" label="Select" change="{!c.onCheck}"/>
+        </aura:set>
+        <lightning:recordViewForm recordId="{!v.product}" objectApiName="Product">
+            <lightning:outputField fieldName="Name"/>
+        </lightning:recordViewForm>
+        <lightning:recordEditForm recordId="{!v.orderProduct}" objectApiName="OrderItem">
+            <lightning:card >
+                <lightning:inputField fieldName="Quantity" />
+                <lightning:outputField fieldName="UnitPrice" />
+                <lightning:outputField fieldName="TotalPrice"/>
+                <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" />
+            </lightning:card>
+        </lightning:recordEditForm>
+    </lightning:card>
+</aura:component>
