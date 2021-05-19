@@ -9,12 +9,12 @@
             <aura:set attribute="else">
                 <div class="slds-p-around_small">
                     <lightning:recordEditForm objectApiName="Class_Registration__c" onsuccess="{!c.handleRegistration}">
-                        <lightning:inputField fieldName="Class__c" value="{!v.classId}" variant="label-stacked" disabled="true"></lightning:inputField>
-                        <lightning:inputField fieldName="Account__c" value="{!v.currAccId}" variant="label-stacked" disabled="true"></lightning:inputField>
-                        <lightning:inputField fieldName="First_Name__c" variant="label-stacked" ></lightning:inputField>
-                        <lightning:inputField fieldName="Name" variant="label-stacked" ></lightning:inputField>
-                        <lightning:inputField fieldName="Date_Registered__c" variant="label-stacked" ></lightning:inputField>
-                        <lightning:inputField fieldName="Email__c" variant="label-stacked" ></lightning:inputField>
+                        <lightning:inputField style="color:black;" fieldName="Class__c" value="{!v.classId}" variant="label-stacked" disabled="true"></lightning:inputField>
+                        <lightning:inputField style="color:black;" fieldName="Account__c" value="{!v.currAccId}" variant="label-stacked" disabled="true"></lightning:inputField>
+                        <lightning:inputField style="color:black;" fieldName="First_Name__c" variant="label-stacked" ></lightning:inputField>
+                        <lightning:inputField style="color:black;" fieldName="Name" variant="label-stacked" ></lightning:inputField>
+                        <lightning:inputField style="color:black;" fieldName="Date_Registered__c" variant="label-stacked" ></lightning:inputField>
+                        <lightning:inputField style="color:black;" fieldName="Email__c" variant="label-stacked" ></lightning:inputField>
                         <lightning:button type="submit" name="register" label="Register" variant="brand" 
                                           class="slds-m-top_small"></lightning:button>
                     </lightning:recordEditForm>
@@ -22,4 +22,4 @@
             </aura:set>
         </aura:if>
     </lightning:card>
-</aura:component>	
+</aura:component>

@@ -1,14 +1,106 @@
 .THIS {
-    height: 70vh;
-    margin-bottom: 300px;
-    padding-top: 40px;
+   
+}
+
+.THIS .cClassFilter{
+    z-index: 99!important;
+}
+
+.THIS p{
+    padding-left: 15px;
 }
 
 .THIS .button_style{
     margin: 7px;
+    font-size: .8em;
 }
 
 .THIS .slds-button-group{
     background: none!important;
-    margin-left: auto!important;
+    margin: auto!important;
+    position: initial!important;
+    width:auto!important;
 }
+
+.THIS .slds-button{
+    border-radius: 5px;
+}
+
+.THIS .slds-button:hover{
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid white;
+}
+
+.THIS .slds-button:first-child{
+    border-radius: 5px;
+}
+
+.THIS .slds-button:first-child:hover{
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid white;
+}
+
+.THIS .slds-button:last-child{
+    border-radius: 5px;
+}
+
+.THIS .slds-button:last-child:hover{
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid white;
+}
+
+.THIS .slds-card{
+    background:transparent!important;
+    color:  #fff;
+}
+
+
+.THIS .slds-card:hover{
+    background:transparent!important;
+    border: 1px  #fff solid;
+    opacity: .9;
+}
+
+.THIS .slds-modal__container{
+	margin-top: 5%;
+}
+
+.THIS h1{
+    color: white;
+}
+
+.THIS p{
+    color: white;
+    padding-top: 10px;
+}
+
+.THIS .slds-modal__header{
+    background: #78CCFD!important; 
+    color: white!important; 
+}
+
+.THIS .slds-modal__content{
+    background: #78CCFD!important;
+}
+
+.THIS .slds-modal__footer{
+    background: #78CCFD!important;
+}
+
+.THIS .appText{
+    color: white!important;
+}
+
+.THIS .slds-box{
+    color: white!important;
+}
+
+.THIS .slds-form-element__static{
+    color: white;
+}
+
+.THIS .slds-truncate{}
+

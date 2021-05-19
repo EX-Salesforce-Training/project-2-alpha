@@ -43,6 +43,7 @@
                 component.set("v.accountPage", !bool);
                 component.set("v.classesPage", !bool);
                 component.set("v.careerPage", !bool);
+                component.set("v.ordersPage", !bool);
                 
                 break;
             case "Swim League":
@@ -57,6 +58,7 @@
                 component.set("v.accountPage", bool);
                 component.set("v.classesPage", !bool);
                 component.set("v.careerPage", !bool);
+                component.set("v.ordersPage", !bool);
                 break;
             case "Classes":
                 bool = component.get("v.classesPage");
@@ -83,6 +85,7 @@
                 component.set("v.accountPage", !bool);
                 component.set("v.classesPage", !bool);
                 component.set("v.careerPage", bool);
+                component.set("v.ordersPage", !bool);
                 break;
             case "Account":
                 bool = component.get("v.accountPage");
@@ -96,6 +99,21 @@
                 component.set("v.accountPage", bool);
                 component.set("v.classesPage", !bool);
                 component.set("v.careerPage", !bool);
+                component.set("v.ordersPage", !bool);
+                break;
+            case "Cart":
+                bool = component.get("v.ordersPage");
+                console.log(clicked+": "+bool);
+                if(bool == true){
+                    return;
+                }
+                bool = true;
+                component.set("v.homePage", !bool);
+                component.set("v.campPage", !bool);
+                component.set("v.accountPage", !bool);
+                component.set("v.classesPage", !bool);
+                component.set("v.careerPage", !bool);
+                component.set("v.ordersPage", bool);
                 break;
         }
         

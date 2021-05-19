@@ -10,14 +10,16 @@
     <aura:registerEvent name="registeredFilterEvent" type="c:ClassFilterEvent"/>
 
     <aura:handler name="init" value="this" action="{!c.handleStartFilter}"></aura:handler>
-    <lightning:layout multipleRows="true" class="filter_style">
+     
+    <lightning:layout multipleRows="true"  class="filter_style">
         <lightning:layoutItem padding="around-small">
             <div class="header-column" >
                 <lightning:combobox label="Level" placeholder="Select Level" 
                                     fieldLevelHelp="Find Level of Difficulty"
                                     variant="label-stacked" value="{!v.levelSelected}"
                                     options="{!v.classLevels}" 
-                                    onchange="{!c.handleFilterOptionSelected}">
+                                    onchange="{!c.handleFilterOptionSelected}"
+                                    dropdownAlignment="auto">
                 </lightning:combobox>
             </div>
         </lightning:layoutItem>
@@ -52,4 +54,5 @@
             </div>
         </lightning:layoutItem>
     </lightning:layout>
-</aura:component>	
+ 
+</aura:component>

@@ -6,12 +6,6 @@
     }
   ],
   "namespace": "",
-<<<<<<< HEAD
-
-  "sfdcLoginUrl": "https://curious-goat-ophonn-dev-ed.my.salesforce.com/",
-
-=======
-  "sfdcLoginUrl": "https://playful-badger-mzx2di-dev-ed.my.salesforce.com/",
->>>>>>> 7bb736022c2a0f434c161acd2e331488d61b4c67
+  "sfdcLoginUrl": "https://brave-narwhal-1ovabo-dev-ed.my.salesforce.com/",
   "sourceApiVersion": "51.0"
 }

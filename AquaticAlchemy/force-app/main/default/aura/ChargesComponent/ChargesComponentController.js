@@ -2,11 +2,15 @@
     getChargesList : function(component, event, helper) {
         helper.getCharges(component);
     },
-    handleClick : function(component, event, helper) {
+    handleSubmit : function(component, event, helper) {
         helper.submitButton(component);
     },
     handleComponentEvent : function(component, event, helper) {
         helper.updateSelected(component, event);
+    },
+    handleDelete : function(component, event ,helper){
+        console.log("handleDelete");
+        helper.deleteButton(component);
     }
     
 })

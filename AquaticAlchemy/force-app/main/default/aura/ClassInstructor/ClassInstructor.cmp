@@ -14,7 +14,38 @@
                         <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Name" variant="label-hidden"></lightning:outputField>
                     </lightning:layoutItem>
                     <lightning:layoutItem>
-                        <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Instructor_Email__c" variant="label-hidden"></lightning:outputField>
+                        <div class="slds-box slds-grid slds-wrap slds-p-around_small">
+                            <div class="slds-col" >
+                                <lightning:layoutItem>
+                                    <span>Name </span>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                    <span>Location </span>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                    <span>Email </span>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                    <span>Phone </span>
+                                </lightning:layoutItem>
+                                                            
+                            </div>
+                            <div class="slds-col" >
+                                <lightning:layoutItem>
+                                    <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Name" variant="label-hidden"></lightning:outputField>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                     <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Home__c" variant="label-hidden"></lightning:outputField>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                     <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Instructor_Email__c" variant="label-hidden"></lightning:outputField>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem>
+                                     <lightning:outputField style="color:brown;font-weight:bold;" fieldName="Phone__c" variant="label-hidden"></lightning:outputField>
+                                </lightning:layoutItem>
+                                                              
+                            </div>
+                       </div>
                     </lightning:layoutItem>
                 </div>
             </div>

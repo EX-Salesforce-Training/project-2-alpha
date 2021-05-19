@@ -1,11 +1,17 @@
-.THIS.filter_style{
-
-    background-color: #78CCFD;
-
+.THIS {
 }
+
+.THIS .filter_style{
+    
+    opacity: .95;
+    border-radius: 5px;
+    
+}
+
 .THIS .header-column {
-    color:aqua;
+    color: #78CCFD;
     padding: 0 2rem;
+    border-radius: 5px;
 }
 .THIS.c-container {
     border: 1px Solid #d8dde6;

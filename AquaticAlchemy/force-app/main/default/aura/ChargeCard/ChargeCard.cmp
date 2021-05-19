@@ -1,18 +1,23 @@
 <aura:component >
-    <aura:attribute name="chargeName" type="String"  />
-    <aura:attribute name="chargeAmount" type="String" />
-    <aura:attribute name="chargeID" type="String"/>
+    <aura:attribute name="product" type="String"  />
+    <aura:attribute name="orderProduct" type="String"/>
     <aura:registerEvent name="checkboxEvent" type="c:Checked"/>
-	<lightning:card title="Charge">
-            <aura:set attribute="actions">
-                <ui:inputCheckbox aura:id="checkbox" label="Select" change="{!c.onCheck}"/>
-            </aura:set>
-            <div class="slds-p-horizontal_small">
-                    <div class="slds-box">
-                        <p>{!v.chargeName}</p>
-                        <p>{!v.chargeAmount}</p>
-                        <p><ui:outputText class="result" aura:id="checkResult" value="false" /></p>
-                    </div>
-            </div>
-        </lightning:card>
+    <lightning:card variant="Narrow" title="Class">
+        <aura:set attribute="actions">
+            <ui:inputCheckbox aura:id="checkbox" label="Select" change="{!c.onCheck}"/>
+        </aura:set>
+        <div style="padding-left:15px;">
+        <lightning:recordViewForm recordId="{!v.product}" objectApiName="Product">
+            <lightning:outputField fieldName="Name"/>
+        </lightning:recordViewForm>
+        </div>
+        <lightning:recordEditForm recordId="{!v.orderProduct}" objectApiName="OrderItem">
+            <lightning:card >
+                <lightning:inputField fieldName="Quantity" />
+                <lightning:outputField fieldName="UnitPrice" />
+                <lightning:outputField fieldName="TotalPrice"/>
+                <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" />
+            </lightning:card>
+        </lightning:recordEditForm>
+    </lightning:card>
 </aura:component>

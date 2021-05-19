@@ -21,19 +21,7 @@
 }
 
 .THIS .view{
-    background: red;
     margin-top: 30px;
 }
 
 
-.THIS .slds-card{
-    color: white;
-    background: #78CCFD!important;
-    opacity: .9;
-}
-
-.THIS .slds-card:hover{
-    color: white;
-    background: #78CCFD!important;
-    opacity: 1;
-}

@@ -16,3 +16,8 @@
     padding-top: 40px;
 }
 
+.THIS .slds-card{
+    color: #102151;
+    background: #78CCFD!important;
+    opacity: .9;
+}

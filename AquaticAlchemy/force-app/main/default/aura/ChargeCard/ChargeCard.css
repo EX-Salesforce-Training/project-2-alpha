@@ -1,0 +1,44 @@
+.THIS {
+    min-width:320px;
+    max-width:360px;
+    background: #102151;
+    opacity: .9;
+}
+
+.THIS .slds-card{
+    background: #102151;
+    padding: 0px 20px 20px 20px;
+}
+
+.THIS .slds-form-element{
+    
+}
+
+.THIS .slds-form-element__label{
+    color: white;
+}
+.THIS .slds-form-element__static{
+    color: white;
+}
+.THIS .slds-form-element_horizontal{
+    background: #102151;
+}
+
+.THIS .slds-text-heading_small{
+    color: white;
+}
+.THIS .uiLabel-left{
+    color: white;
+}
+
+.THIS .slds-button{
+    background: white;
+    color: #102151;
+    border: 1px solid transparent;
+}
+
+.THIS .slds-button:hover{
+    background:#102151;
+    color: white;
+    border: 1px solid white;
+}

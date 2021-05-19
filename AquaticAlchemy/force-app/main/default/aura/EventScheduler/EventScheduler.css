@@ -1,4 +1,10 @@
 .THIS {
-    height: 70vh;
+    height: 100vh;
     padding: 40px;
+    display: block;
+    border-radius: 5px;
+}
+
+.THIS .slds-grid{
+    height: 100px!important;
 }
