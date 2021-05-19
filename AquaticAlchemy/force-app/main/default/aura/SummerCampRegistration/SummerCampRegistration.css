@@ -2,6 +2,10 @@
 
 }
 
+.THIS .slds-card__header-title{
+    color:white!important;
+}
+
 .THIS .slds-text-heading_small{
     font-size: 2em;
     font-weight: bold;

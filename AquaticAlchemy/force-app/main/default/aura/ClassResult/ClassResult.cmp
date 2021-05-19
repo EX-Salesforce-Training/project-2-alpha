@@ -19,8 +19,8 @@
     
     <!-- Display filter -->
     <div>
-        
-    <c:ClassFilter/>
+
+    <c:ClassFilter />
 
     <aura:if isTrue="{!v.classesAvailable}">
         <lightning:layout multipleRows="true"> 
