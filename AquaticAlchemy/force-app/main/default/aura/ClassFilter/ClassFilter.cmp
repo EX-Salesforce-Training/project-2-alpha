@@ -10,7 +10,7 @@
     <aura:registerEvent name="registeredFilterEvent" type="c:ClassFilterEvent"/>
 
     <aura:handler name="init" value="this" action="{!c.handleStartFilter}"></aura:handler>
-    <div style="background-color: #78CCFD;">
+     
     <lightning:layout multipleRows="true"  class="filter_style">
         <lightning:layoutItem padding="around-small">
             <div class="header-column" >
@@ -54,5 +54,5 @@
             </div>
         </lightning:layoutItem>
     </lightning:layout>
-</div>
+ 
 </aura:component>
