@@ -49,9 +49,6 @@ public with sharing class ClassRegistrationTriggerHandler {
                     }
                  }//else if an order doesn't already exists in the DB related to the curr user account, create a new order
                  if (nvrFound) {
-                     
-                        System.debug('inside not found CHECKING ACCid ' + accId);
-                     System.debug('inside nvrFound');
                      Order newOrder = new Order();
                         newOrder.AccountId =  accId;
                         newOrder.Status = 'Draft';
