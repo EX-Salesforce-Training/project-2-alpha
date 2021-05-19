@@ -12,13 +12,14 @@
         <aura:set attribute="else">
             <div class="slds-grid slds-wrap">
                 <aura:iteration items="{!v.orderProductList}" var="orderProduct">
-                    <div class="slds-col slds-size_1-of-3">
+                    <div class="slds-col slds-size_1-of-4">
                     <c:ChargeCard product="{!orderProduct.Product2Id}" orderProduct="{!orderProduct.Id}" />
                     </div>
                 </aura:iteration>  
             </div> 
             <aura:if isTrue="{!v.allFalse}">
-                <lightning:button label="Submit" title="Submit Button" onclick="{!c.handleSubmit}"/>
+                <lightning:button label="Check Out" title="Submit Button" onclick="{!c.handleSubmit}"/>
+
                 <aura:set attribute="else">
                     <lightning:button label="Delete Records" title="Delete Button" onclick="{! c.handleDelete }"/>
                 </aura:set>

@@ -6,9 +6,11 @@
         <aura:set attribute="actions">
             <ui:inputCheckbox aura:id="checkbox" label="Select" change="{!c.onCheck}"/>
         </aura:set>
+        <div style="padding-left:15px;">
         <lightning:recordViewForm recordId="{!v.product}" objectApiName="Product">
             <lightning:outputField fieldName="Name"/>
         </lightning:recordViewForm>
+        </div>
         <lightning:recordEditForm recordId="{!v.orderProduct}" objectApiName="OrderItem">
             <lightning:card >
                 <lightning:inputField fieldName="Quantity" />

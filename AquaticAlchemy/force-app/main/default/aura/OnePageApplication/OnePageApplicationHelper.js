@@ -101,7 +101,7 @@
                 component.set("v.careerPage", !bool);
                 component.set("v.ordersPage", !bool);
                 break;
-            case "Orders":
+            case "Cart":
                 bool = component.get("v.ordersPage");
                 console.log(clicked+": "+bool);
                 if(bool == true){

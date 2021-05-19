@@ -27,7 +27,7 @@
             <lightning:button label="Classes" variant="brand" onclick="{!c.btnClicked}"/>
             <lightning:button label="Careers" variant="brand" onclick="{!c.btnClicked}"/>
             <lightning:button label="Account" variant="brand" onclick="{!c.btnClicked}"/>
-            <lightning:button label="Orders" variant="brand" onclick="{!c.btnClicked}"/>
+            <lightning:button label="Cart" variant="brand" onclick="{!c.btnClicked}"/>
         </lightning:buttonGroup>
     </div>
     

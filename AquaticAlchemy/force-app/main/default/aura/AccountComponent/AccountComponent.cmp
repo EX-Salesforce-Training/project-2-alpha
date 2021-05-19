@@ -1,6 +1,6 @@
 <aura:component controller="AccountController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
     <aura:handler name="init" action="{!c.myAction}" value="{!this}" />
-    <aura:handler name="init" action="{!c.getContacts}" value="{!this}" />
+    <aura:handler name="change" action="{!c.getContacts}" value="{!v.userAccount}" />
     <aura:attribute name="userAccount" type="String" default="0015e0000052xLsAAI"/>
     <aura:attribute name="contact" type="String"/> 
     <aura:attribute name="otherContacts" type="Contact[]"/>
@@ -28,11 +28,13 @@
             </lightning:card>
         </lightning:recordEditForm>
         <lightning:card title="Other Contacts">
-            <aura:iteration items="{!v.otherContacts}" var="contact">
-                <div class="slds-grid slds-gutters">
-                    <c:OtherContactComponent contactID="{!contact.Id}" contactName="{!contact.Name}"/>
-                </div>
-            </aura:iteration>
+            <div class="slds-grid slds-gutters">
+                <aura:iteration items="{!v.otherContacts}" var="contact">
+                        <div class="slds-col slds-size_1-of-8">
+                            <c:OtherContactComponent contactID="{!contact.Id}" contactName="{!contact.Name}"/>
+                        </div>
+                </aura:iteration>
+             </div>
         </lightning:card>
     </aura:if> 
     <aura:if isTrue="{!v.contactView}">

@@ -3,6 +3,10 @@
     padding-top: 40px;
 }
 
+.THIS .cClassFilter{
+    z-index: 99!important;
+}
+
 .THIS p{
     padding-left: 15px;
 }
