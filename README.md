@@ -19,7 +19,7 @@ Aquatic Alchemy is a 100% organic, vegan friendly, fresh water facility where on
 - [x] User can submit a new job application
 - [x] User can view upcoming events
 - [x] User can schedule events
-- [ ] User can login to their account
+- [x] User can login to their account
 - [ ] User can enroll their child for Summer Camp
 - [ ] User can view Swim League information
 
